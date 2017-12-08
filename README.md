@@ -1,4 +1,4 @@
 # PrjMeteo
-A vous de jouez !!!!
+A vous de jouer !!!!
 
-Salut les gars voila le nouveau repository n'hesité pas à ecrire sur cette page. Des bisous.
+Salut les gars voilà le nouveau repository n'hésitez pas à écrire sur cette page. Des bisous.
