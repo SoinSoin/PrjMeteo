@@ -1,0 +1,62 @@
+/*J'importe ma police pour pouvoir l'utiliser*/
+@import 
+{
+	url('https://fonts.googleapis.com/css?family=Ubuntu');
+}
+
+/*La partie qui suit sert a faire en sorte 
+que mon container principal prenne toute la
+place affichée, je déclare le html afin
+que le div du container ait un parent
+afin qu'il hérite de sa hauteur */
+html, #container 
+{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: white;
+	font-family: 'Ubuntu' , sans-serif;
+}
+/*Je centre le texte au dessus du formulaire
+en utilisant un div car Denis m'a appris
+une technique de filou*/
+#titre
+{
+	margin: 0 auto;
+	width : 500px;
+	/*background-color: #293156*/
+	height: 250px;
+	text-align: center;
+	padding-top: 50px;
+	color: white;
+	text-align: center;
+	margin-bottom: 100px;
+}
+/*Je centre le texte du formulaire*/
+p
+{
+	color: #ff0066;
+	padding-bottom: 30px;
+	text-align: center;
+}
+/*Ici je stylise le formulaire et 
+le centre*/
+#formulaire 
+{
+	margin: 0 auto;
+	width : 500px;
+	background-color: #dfe0e2;
+	height: 250px;
+	padding-top: 50px;
+	border-radius: 10px;
+}
+#bouton 
+{
+	color: white;
+	background-color: #ff0066;
+	margin-top: 40px;
+}
+#champ
+{
+	text-align: center;
+}

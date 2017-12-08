@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ajout.css">
+</head>
+
+<body>
+    <form class="box" action="cible.php" method="post">
+        <h1>Ajouter un nouvel utilisateur</h1>
+        <div class="adresse">
+            <p> Adresse Email :
+                <input type="text" name="adresse" required placeholder="nomutilisateur@gmail.com">
+            </p>
+        </div>
+        <label class="statut">
+            <p>Statut :
+                <select name="statut" style="width: 200px; height: 20px">
+                    <option>Formateur</option>
+                    <option>Apprenant</option>
+                </select>
+            </p>
+        </label>
+        <div class="valider">
+            <input class="boutton" type="submit" value="Ajouter">
+        </div>
+    </form>
+</body>
+
+</html>
