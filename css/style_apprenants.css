@@ -208,28 +208,44 @@ body
 
 #j_quatre
 {
-    border-bottom: 2px solid #ff0066;
-}
+    border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
+
 
 #j_trois
 {
-    border-bottom: 2px solid #ff0066;
-}
+    border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #j_deux
 {
-    border-bottom: 2px solid #ff0066;
-}
+   border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #j_un
 {
-    border-bottom: 2px solid #ff0066;
-}
+    border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #total
 {
-    border-bottom: 2px solid #ff0066;
-}
+  border: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #carte {
     position: relative;
