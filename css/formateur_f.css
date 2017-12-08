@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+    html{
+        font-family: 'Ubuntu', sans-serif;
+    }      
+    
+
 body {
     margin: 0;
     white-space: nowrap;
@@ -231,7 +238,7 @@ body {
 /* Bouton ajouter un mail */
 .ajout{
     position: absolute;
-    margin-left: 69%;
+    margin-left: 67%;
     margin-top: -5%;
     border: 1px solid black;
     padding: 3px;
@@ -239,8 +246,8 @@ body {
     white-space: nowrap;
 }
 
-.de, .a{
-    margin-left: 34px;
+.de, .a, .un, .deux{
+    margin-left: 40px;
 }
 
 .carte{
