@@ -7,30 +7,17 @@
     <link rel="stylesheet" type="text/css" href="css/style_modif.css">
 </head>
 <body>
+    
     <table>
-        <!--cellule 1-->
-        <td class="colonnegrise"></td>
-        <!--cellule 2-->
-        <td class="colonnecentrale">
-
-                <div>
-                    <h1>Modifier votre profil</h1>
-                </div>
-
-                <!--corps du formulaire-->
-
-                <form>
-
-        <table>
         
             <!--cellule 1-->
-                <td class="colonnegrise">
+            <td class="colonnegrise">
                 
-                </td>
+            </td>
 
             <!--cellule 2-->
 
-                <td class="colonnecentrale">
+            <td class="colonnecentrale">
 
                 <div>
                     <h1>Modifier votre profil</h1>
@@ -52,7 +39,38 @@
                     <input type="password" name="ancienMDP" placeholder=" Mot de passe actuel"><br><br>
 
                     <label>Nouveau mot de passe :</label><br><br>
-                    <input type="password" name="nouveauMDP" placeholder=" Nouveau mot de passe"><br><br>
+                    <input type="password" id="mdpp" name="nouveauMDP" placeholder=" Nouveau mot de passe"><br><br>
+
+                    <label>Confirmation du nouveau mot de passe:</label><br><br>
+                    <input type="password" id="mdppp" name="confirmation_mdp" placeholder="confirmer le mot de passe"><br><br>
+
+                    <!-- script pour vérifier que les champs mot de passe sont identiques-->
+
+                <script type="text/javascript">
+
+                    // on va chercher la valeur de ce qui est rentré dans nos input mot de passe
+
+                    var pass1 = document.getElementById("mdpp");
+                    var pass = document.getElementById("mdppp");
+                    
+                    
+                    function validatePassword(){
+
+                    //la condition vérifie si nos champs ont été remplis de façon identiques ou non
+                        if(pass1.value!=pass.value){
+                            pass.setCustomValidity("Les mots de passes ne sont pas identiques.");
+                            //affiche une infobulle si la condition est vraie
+                        }
+                        else{
+                            pass.setCustomValidity("");
+                            //ne fait rien si la condition est fausse
+                        }
+                    }
+
+                    //on initialise notre fonction
+                    pass1.onchange = validatePassword;
+                    pass.onkeyup = validatePassword;
+                </script>
 
                     <label>Nouveau nom de région :</label><br><br>
                     <input type="text" name="nomderegion" placeholder=" Nouveau nom de région"><br><br>
@@ -62,16 +80,16 @@
                     <input id="valider" class="bouton" type="submit" name="Valider" value="Valider">
                     <input id="annuler" class="bouton" type="submit" name="Annuler" value="Annuler">
                 </form>
-                </td>
+            </td>
 
-                <!--cellule 3-->
+            <!--cellule 3-->
 
-                <td class="colonnegrise">
+            <td class="colonnegrise">
             
-                </td>
+            </td>
             
-        </table>
+    </table>
         
     
-    </body>
+</body>
 </html>

@@ -15,7 +15,7 @@
     <!--Cellule 2-->
     <td>
         <h1>Formulaire d'inscription</h1>
-        <form id="formulaire" method="post" action="">
+        <form id="formulaire" method="post" action="traitement.php">
             <p>
                 <label>Votre nom</label> : <br><br>
                 <input type="text" name="nom" placeholder="Ex : Dupont" required/>
@@ -32,13 +32,13 @@
         </p> -->
             <p>
                 <label>Votre mot de passe</label> : <br><br>
-                <input class="input" id="mdpp" type="password" name="mdp" placeholder="mot de passe" required/>
+                <input class="input" id="mdpp" type="password" name="motdepasse" placeholder="mot de passe" required/>
             </p>
             <p>
                 <label>Confirmer votre mot de passe</label> : <br><br>
-                <input type="password" id="mdppp" name="mdp1" placeholder="mot de passe" required/>
+                <input type="password1" id="mdppp" name="motdepasse" placeholder="mot de passe" required/>
                 
-        <!-- script pour vérifier que les champs mot de passe sont identiques-->
+                 <!-- script pour vérifier que les champs mot de passe sont identiques-->
 
                 <script type="text/javascript">
 
@@ -53,23 +53,24 @@
                     //la condition vérifie si nos champs ont été remplis de façon identiques ou non
                         if(pass1.value!=pass.value){
                             pass.setCustomValidity("Les mots de passes ne sont pas identiques.");
-                            //
+                            //affiche une infobulle si la condition est vraie
                         }
                         else{
                             pass.setCustomValidity("");
+                            //ne fait rien si la condition est fausse
                         }
                     }
 
+                    //on initialise notre fonction
                     pass1.onchange = validatePassword;
                     pass.onkeyup = validatePassword;
                 </script>
-
             </p>
             <p>
                 <label>Nom de la région</label> : <br><br>
                 <input type="text " name="nomregion" placeholder="Ex : Fantasia"required/>
             </p>
-            <input type="submit" name="envoyer" id="bouton" title="Es-tu sûr de vouloir t'inscrire?">
+            <input type="submit" name="envoyer" id="bouton">
         </form>
     </td>
     <!-- Cellule 3 -->
