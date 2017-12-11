@@ -57,8 +57,11 @@ a
 }
 
 #connexion {
-	color: white;
-	background-color: #ff0066;
-	width: 150px;
-	height: 30px;
+	border: 1px solid white;
+    padding: 9px;
+    color: white;
+    white-space: nowrap;
+    background-color: #ff0066;
+    padding-right: 20px;
+    padding-left: 20px;
 }

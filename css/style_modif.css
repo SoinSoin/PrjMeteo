@@ -40,8 +40,11 @@ input
 
 /*style bouton*/
 .bouton {
-	background-color: #ff0066;
-	color: white;
+	border: 1px solid white;
+    padding: 5px;
+    color: white;
+    white-space: nowrap;
+    background-color: #ff0066;
 }
 
 table 
