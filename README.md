@@ -1,5 +1,6 @@
 # PrjMeteo
-A vous de jouez !!!!
+
+Toute branche sur ce repositrie n'étant pas master et Dev sera supprimé sans avertissement !!!
 
 Salut les gens voila le nouveau repository n'hesité pas à ecrire sur cette page. Des bisous.
 _____________________________________________________________________________________________________________________________________________________
@@ -184,6 +185,7 @@ commenter
 l’action)
 (Exemple
 :
+-
 git
 commit
 -m
