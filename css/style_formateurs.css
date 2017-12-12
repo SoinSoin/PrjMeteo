@@ -380,20 +380,21 @@ border-image-slice: 1; }
 
 }
 
-#menu_lat_droit_droit_bas 
-{
-    z-index: -1;
-    width: 20%;
-    height: 89%;
-    text-align: center;
+.partie_formateur{
+    background-color: black; 
     position: absolute;
-    top: 70px;
-    right: 0;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 10% 10% 10% 30% 30%;
-    border-left: 2px solid #ff0066;
+   /* padding-left:100%;
+    padding-right:100%;
+    background-color: black;*/
+    /*margin-top: 46%;*/
+}
+#menu_lat_droit_bas{ 
+background-color: red; 
+
+   
 }
 
+.partie{
 
+}
 /*Carte et position des pastille*/
