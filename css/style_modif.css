@@ -33,17 +33,17 @@ input
 {
 	width: 250px;
 	display: inline-block;
+
 }
 
 #annuler 
 {
-	margin-left: 30px;
 	width: 100px;
 }
 
 #valider 
 {
-	margin-left: 10px;
+
 	width: 100px;
 }
 

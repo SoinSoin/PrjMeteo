@@ -1,44 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-html
-{
-	font-family: 'Ubuntu', sans-serif;
+html {
+    font-family: 'Ubuntu', sans-serif;
 }
 
-h1
-{
-	text-align: center;
-	color:#ff0066;
+h1 {
+    text-align: center;
+    color: #ff0066;
 }
 
-.boutton
-{
-	border: 1px solid white;
+.boutton {
+    border: 1px solid white;
+    padding: 5px;
     color: white;
     white-space: nowrap;
-    text-decoration: none;
     background-color: #ff0066;
 }
 
-#width-input{
-	width: 170px;
-
+#width-input {
+    width: 170px;
 }
 
-select 
-{
-	font-size: 15px;
+select {
+    font-size: 15px;
 }
 
-.box
-{
-	justify-content: center;
-    width: 410px;
+.box {
+    width: 370px;
     background-color: white;
-	margin: 0 auto;
+    margin: 0 auto;
     background-color: #dfe0e2;
     padding-top: 20px;
     padding-bottom: 20px;
-    	color: #ff0066;
-	text-align: center;
+    color: #ff0066;
+    text-align: center;
 }
