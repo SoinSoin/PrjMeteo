@@ -1,4 +1,5 @@
 # PrjMeteo
+<<<<<<< HEAD
 
 Toute branche sur ce repositrie n'étant pas master et Dev sera supprimé sans avertissement !!!
 
@@ -201,3 +202,8 @@ border: 1px solid ;
 
 border-image-slice: 1;
 }
+=======
+A vous de jouer !!!!
+
+Salut les gars voilà le nouveau repository n'hésitez pas à écrire sur cette page. Des bisous.
+>>>>>>> marjorie

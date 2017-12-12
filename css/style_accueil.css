@@ -1,64 +1,136 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-/*couleur de fond de la page*/	
+
+/*couleur de fond de la page*/
+
  html
-{   	
+
+{
+
 	font-family: 'Ubuntu', sans-serif;
+
 	background-color: #dfe0e2;
+
 	height: 100%;
+
 	position: relative;
+
 	color: #ff0066;
+
 }
 
+
+
 /* center est la position du formulaire*/
+
 .center
-{  
-	position: absolute; 
-  	top: 50%; 
+
+{
+
+	position: absolute;
+
+  	top: 50%;
+
   	left: 50%;
+
   	height: 100%;
+
   	transform: translate(-50%, -50%);
-	white-space: nowrap; 
+
+	white-space: nowrap;
+
 	text-align: center;
+
 	background-color: white;
+
 	padding-right: 15%;
+
 	padding-left: 15%;
+
 }
+
+
+
 
 
 form
-{
-height: 300px;
-width: 500px
-margin-bottom: 300px;
-padding-left: 40px;
-padding-right: 40px;
-position: relative;
-}
- 
 
-				
-table, td
-{  
-	padding-right: 25%;
-	padding-left: 25%;
-	text-align: center;
+{
+
+height: 300px;
+
+width: 500px
+
+margin-bottom: 300px;
+
+padding-left: 40px;
+
+padding-right: 40px;
+
+position: relative;
+
 }
+
+
+
+
+
+
+
+table, td
+
+{
+
+	padding-right: 25%;
+
+	padding-left: 25%;
+
+	text-align: center;
+
+}
+
+
 
 /*Style des liens */
-a 
+
+a
+
 {
+
 	color: #ff0066;
+
 	text-align: center;
+
 	font-size: 16px;
+
 }
 
-#blague {
-	color: black;
+li.rss-item{
+  width: 400px;
+  margin-left: 1px;
+  color: black;
 }
+
+#blague2{
+  white-space: normal;
+  word-wrap: break-word;
+  width: 400px;
+}
+
 
 #connexion {
-	color: white;
-	background-color: #ff0066;
-	width: 150px;
-	height: 30px;
+
+	border: 1px solid white;
+
+    padding: 9px;
+
+    color: white;
+
+    white-space: nowrap;
+
+    background-color: #ff0066;
+
+    padding-right: 20px;
+
+    padding-left: 20px;
+
 }
