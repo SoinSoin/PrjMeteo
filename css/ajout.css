@@ -10,39 +10,19 @@ h1
 	text-align: center;
 	color:#ff0066;
 }
- 
-.valider
-{
-	margin-left: 165px;
-	margin-top: 50px;
-	width: 200px;
-}
 
 .boutton
 {
 	border: 1px solid white;
-    padding: 9px;
     color: white;
     white-space: nowrap;
     text-decoration: none;
     background-color: #ff0066;
-    margin-bottom: 20px;
-    padding-left: 12px;
-    padding-right: 12px;
 }
 
-.statut
-{
-	color: white;
-	text-align: center;
-	color: #ff0066;
-}
+#width-input{
+	width: 170px;
 
-.adresse
-{
-	margin-top: 30px;
-	color: #ff0066;
-	text-align: center;
 }
 
 select 
@@ -52,12 +32,13 @@ select
 
 .box
 {
-	display: inline-block;
 	justify-content: center;
-    width: 400px;
-    border-radius: 1em;	
+    width: 410px;
     background-color: white;
-    margin-top: 140px;
-    margin-left: 404px;
+	margin: 0 auto;
     background-color: #dfe0e2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    	color: #ff0066;
+	text-align: center;
 }
