@@ -1,49 +1,53 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style_accueil.css">
-	<title>METEON - La météo des humeurs</title>
-</head>	
-<body>
-	<div class="page">
-		<div class="center">
-			<h1>Bienvenue sur la météo du jour</h1>	
+
+	<head>
+		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style_accueil.css">
+		<title>METEON - La météo des humeurs</title>
+	</head>
+
+	<body>
+
+		<div class="page">
+			<div class="center">
+				<h1>Bienvenue sur la météo du jour</h1>
 			<!--ceci est la div du centre avec la connexion-->
-			<div id="centerup">
+				<div id="centerup">
 			<!--tableau avec les inputs pour le mail le mdp  ainsi que les bouton connexion, mdp lost, inscription-->
-			<form>	
-				<table>
-					<p>
-						<label>Veuillez entrer votre adresse mail :</label> <br><br>
-						<input type="email" name="mail@" placeholder="ex: john-smith@cliché.com" >
-					</p>
-					<br>
-					<p>
-						<label>Veuille entrer votre mot de passe :</label> <br><br>
-						<input type="password" name="password" placeholder="password"  >
-					</p>
-					<br>
-				</table>
+				<form>
+					<table>
+						<p>
+							<label>Veuillez entrer votre adresse mail :</label> <br><br>
+							<input type="email" name="mail@" placeholder="ex: john-smith@cliché.com" >
+						</p>
+						<br>
+						<p>
+							<label>Veuille entrer votre mot de passe :</label> <br><br>
+							<input type="password" name="password" placeholder="password"  >
+						</p>
+						<br>
+					</table>
 				<!-- Lien a définir avec le SQL/PHP afin d'amener sur la page apprenant/formateur en fonction du profil -->
 					<input type="button" name="Connexion"  value="Connexion" onclick="" id="connexion" >
+					<br><br>
+					<a href="formulaire_inscription.html">Inscription</a>
+					<br>
+					<a href="formulaire_mdp_oublie.html">Mot de passe oublié ?</a>
+				</form>
 				<br><br>
-				<a href="formulaire_inscription.html">Inscription</a>
-				<br>	
-				<a href="formulaire_mdp_oublie.html">Mot de passe oublié ?</a>
-					
-			</form>
-		<br><br>
-			</div>
-
+				</div>
 			<!--peut être pas la meilleure insertion a retravailler-->
-			<div id="blague">
-				<script language="javascript" charset="utf-8" src="http://dicocitations.lemonde.fr/citationblog.js"></script>
-			</div>
-		</div>	
+				<div id=blague2>
+					<script language="javascript" charset="utf-8" src="http://dicocitations.lemonde.fr/citationblog.js"></script>
+				</div>
+
 	</div>
+
 </body>
 
-</html>
 
+
+</html>

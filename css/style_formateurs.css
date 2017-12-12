@@ -6,8 +6,6 @@ html
 
 body 
 {
-    width: 0;
-    height: 0;
     margin: 0;
 }
 
@@ -31,6 +29,7 @@ body
 	left: 300px;
     font: 'Ubuntu', sans-serif;
     border: 2px solid black;
+    background-color: #FFFFFFFF;
 }
 
 #texte_humeur
@@ -91,7 +90,11 @@ body
     position: absolute;
     top: 0;
     left: 0;
+<<<<<<< HEAD
+    /*border-bottom: 2px solid #ff0066;*/
+=======
     border-bottom: 2px solid #ff0066;
+>>>>>>> formateur
 }
 
 .logo{
@@ -144,6 +147,11 @@ body
     background-color: #ff0066;
     text-align: center;
 }
+<<<<<<< HEAD
+.menu_o{border-bottom: 2px solid #ff0066;
+        margin-top: -584px;}
+=======
+>>>>>>> formateur
 
 #date 
 {
@@ -154,7 +162,11 @@ body
     position: absolute;
     top: 35px;
     right: 20%;
+<<<<<<< HEAD
+    /*border-bottom: 2px solid #ff0066*/
+=======
     border-bottom: 2px solid #ff0066
+>>>>>>> formateur
 }
 
 #bouton_modifier
@@ -208,33 +220,49 @@ body
 
 #j_quatre
 {
-    border-bottom: 2px solid #ff0066;
-}
+    border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
+
 
 #j_trois
 {
-    border-bottom: 2px solid #ff0066;
-}
+    border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #j_deux
 {
-    border-bottom: 2px solid #ff0066;
-}
+   border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #j_un
 {
-    border-bottom: 2px solid #ff0066;
-}
+    border-bottom: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #total
 {
-    border-bottom: 2px solid #ff0066;
-}
+  border: 1px solid ;
+
+-webkit-border-image: linear-gradient(to right, white 10%, #ff0066 10%,#ff0066 90%, white 90%);
+
+border-image-slice: 1; }
 
 #carte {
-    position: relative;
-    top: 72px;
-    right: 100px;
+    position: absolute;
+    top: 80px;
+    left: -100px;
     text-align: center;
     z-index: -1;
 /*    background-image: url("map.jpg");
@@ -359,4 +387,43 @@ body
 .wrapper img{
     width: 50px;
 }
+
+.partie_form{
+    margin-bottom: -3000px;
+
+}
+<<<<<<< HEAD
+.bas{
+    margin-top: 600px;
+    position: absolute;
+    bottom: -189px;    
+}
+
+#menu_bas_droit{
+    background-color: red;
+    float: right;
+    padding-left: 1000px;
+    bottom: 10px;
+}
+
+=======
+
+.partie_formateur{
+    background-color: black; 
+    position: absolute;
+   /* padding-left:100%;
+    padding-right:100%;
+    background-color: black;*/
+    /*margin-top: 46%;*/
+}
+#menu_lat_droit_bas{ 
+background-color: red; 
+
+   
+}
+
+.partie{
+
+}
+>>>>>>> formateur
 /*Carte et position des pastille*/

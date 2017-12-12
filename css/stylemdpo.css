@@ -9,10 +9,9 @@ que mon container principal prenne toute la
 place affichée, je déclare le html afin
 que le div du container ait un parent
 afin qu'il hérite de sa hauteur */
-html, #container 
-{
+html {
 	height: 100%;
-	padding: 0;
+
 	margin: 0;
 	background-color: white;
 	font-family: 'Ubuntu' , sans-serif;
@@ -22,21 +21,13 @@ en utilisant un div car Denis m'a appris
 une technique de filou*/
 #titre
 {
-	margin: 0 auto;
-	width : 500px;
-	/*background-color: #293156*/
-	height: 250px;
 	text-align: center;
-	padding-top: 50px;
-	color: white;
-	text-align: center;
-	margin-bottom: 100px;
 }
 /*Je centre le texte du formulaire*/
-p
+h1,p
 {
 	color: #ff0066;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 	text-align: center;
 }
 /*Ici je stylise le formulaire et 
@@ -44,23 +35,20 @@ le centre*/
 #formulaire 
 {
 	margin: 0 auto;
-	width : 500px;
 	background-color: #dfe0e2;
-	height: 250px;
-	padding-top: 50px;
-	border-radius: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 500px;
 }
 #bouton 
 {
 	border: 1px solid white;
-    padding: 9px;
+    padding: 5px;
     color: white;
     white-space: nowrap;
-    text-decoration: none;
-    margin-top: 20px;
     background-color: #ff0066;
-    padding-right: 12px;
-    padding-left: 12px;
+    width: 70px;
+	margin-top: 15px;
 }
 #champ
 {
