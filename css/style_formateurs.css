@@ -90,7 +90,11 @@ body
     position: absolute;
     top: 0;
     left: 0;
+<<<<<<< HEAD
     /*border-bottom: 2px solid #ff0066;*/
+=======
+    border-bottom: 2px solid #ff0066;
+>>>>>>> formateur
 }
 
 .logo{
@@ -143,8 +147,11 @@ body
     background-color: #ff0066;
     text-align: center;
 }
+<<<<<<< HEAD
 .menu_o{border-bottom: 2px solid #ff0066;
         margin-top: -584px;}
+=======
+>>>>>>> formateur
 
 #date 
 {
@@ -155,7 +162,11 @@ body
     position: absolute;
     top: 35px;
     right: 20%;
+<<<<<<< HEAD
     /*border-bottom: 2px solid #ff0066*/
+=======
+    border-bottom: 2px solid #ff0066
+>>>>>>> formateur
 }
 
 #bouton_modifier
@@ -381,6 +392,7 @@ border-image-slice: 1; }
     margin-bottom: -3000px;
 
 }
+<<<<<<< HEAD
 .bas{
     margin-top: 600px;
     position: absolute;
@@ -394,4 +406,24 @@ border-image-slice: 1; }
     bottom: 10px;
 }
 
+=======
+
+.partie_formateur{
+    background-color: black; 
+    position: absolute;
+   /* padding-left:100%;
+    padding-right:100%;
+    background-color: black;*/
+    /*margin-top: 46%;*/
+}
+#menu_lat_droit_bas{ 
+background-color: red; 
+
+   
+}
+
+.partie{
+
+}
+>>>>>>> formateur
 /*Carte et position des pastille*/
