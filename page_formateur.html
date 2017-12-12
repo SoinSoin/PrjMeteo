@@ -5,13 +5,11 @@
     <title>Page météo</title>
     <link rel="stylesheet" type="text/css" href="css/formateur_f.css">
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/js/alerte.js">
 </head>
 
 <body>
     <!-- Menu en haut -->
-    <div>
-        <p>patator</p>
-    </div>
     <div class="conteneur">
         <div id="logo"><img class="logo" src="images/logo_METEON.png"></div>
         <div id="date"></div>
@@ -40,6 +38,12 @@
         <!-- Fin menu latéral droit -->
         <!-- Div pour la carte humeur-->
         <div class="carte_humeur">
+            <div id="boiteAlerte" visibility="">
+                <p>Ceci est un message d'alerte.</p>
+            </div>
+            <div>
+                <button onclick="alarme('boiteAlerte')">v</button>
+            </div>
             <img class="carte" src="images/map.png">
         </div>
         <!-- Fin de la carte humeur-->
