@@ -33,10 +33,10 @@ une technique de filou*/
 	margin-bottom: 100px;
 }
 /*Je centre le texte du formulaire*/
-p
+h1,p
 {
 	color: #ff0066;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 	text-align: center;
 }
 /*Ici je stylise le formulaire et 
@@ -44,11 +44,10 @@ le centre*/
 #formulaire 
 {
 	margin: 0 auto;
-	width : 500px;
 	background-color: #dfe0e2;
-	height: 250px;
-	padding-top: 50px;
-	border-radius: 10px;
+	height: 130px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 #bouton 
 {
