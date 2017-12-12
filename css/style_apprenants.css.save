@@ -169,9 +169,14 @@ body {
     margin-right: 15px;
 }
 
+<<<<<<< HEAD
 #profil 
 {
 	z-index: -1;
+=======
+#profil {
+    z-index: -1;
+>>>>>>> formehumeur-jcmg
     width: 5%;
     height: 70px;
     position: absolute;
@@ -183,8 +188,7 @@ body {
 
 /* Si jamais on garde la fonctionnalité profil remettre le width a 15% */
 
-#n_p {
-    z-index: -1;
+#n_p     z-index: -1;
     width: 20%;
     height: 70px;
     position: absolute;

@@ -9,23 +9,28 @@
 </head>
 
 <body>
+            </h1>
     <form class="box" action="cible.php" method="post">
-        <h1>Ajouter un nouvel utilisateur</h1>
+
         <div class="adresse">
             <p> Adresse Email :
-                <input type="text" name="adresse" required placeholder="nomutilisateur@gmail.com">
+
+                <input type="email" name="adresse" required placeholder="nomutilisateur@gmail.com">
+
+                <input id="width-input" type="text" name="adresse" required placeholder="nomutilisateur@gmail.com">
+
             </p>
         </div>
         <label class="statut">
             <p>Statut :
-                <select name="statut" style="width: 200px; height: 20px">
+                <select name="statut">
                     <option>Formateur</option>
                     <option>Apprenant</option>
                 </select>
             </p>
         </label>
         <div class="valider">
-            <input class="boutton" type="submit" style="width: 60px; height: 40px" value="Ajouter">
+            <input class="boutton" type="submit" value="Ajouter">
         </div>
     </form>
 </body>
