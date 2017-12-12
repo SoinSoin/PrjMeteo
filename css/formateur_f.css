@@ -194,14 +194,12 @@ body {
     background-color: red;
     color: white;
     text-align:center;
-    visibility: visible;
+    /*visibility: hidden;*/
     position: absolute;
+    display: block;
 }
 
-#lol{
 
-    margin:10px; 
-}
 
 /* image */
 .graphique{

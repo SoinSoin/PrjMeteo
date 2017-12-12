@@ -5,7 +5,7 @@
     <title>Page météo</title>
     <link rel="stylesheet" type="text/css" href="css/formateur_f.css">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/js/alerte.js">
+    <script type="text/javascript" src="alerte.js"></script>
 </head>
 
 <body>
@@ -37,13 +37,10 @@
     
         <!-- Fin menu latéral droit -->
         <!-- Div pour la carte humeur-->
-        <div class="carte_humeur">
-            <div id="boiteAlerte" visibility="">
-                <p>Ceci est un message d'alerte.</p>
-            </div>
-            <div>
-                <button onclick="alarme('boiteAlerte')">v</button>
-            </div>
+        <div class="carte_humeur">    
+            <marquee id="boiteAlerte" behavior='scroll'>Ceci est un message d'alerte.</marquee>
+            <br><br>
+            <button id=lol onclick="toggle_visibility('boiteAlerte');">v</button>
             <img class="carte" src="images/map.png">
         </div>
         <!-- Fin de la carte humeur-->
