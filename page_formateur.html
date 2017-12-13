@@ -8,7 +8,8 @@
     <script type="text/javascript" src="alerte.js"></script>
 </head>
 
-<body>
+<body onload="alerte('boiteAlerte')">
+
     <!-- Menu en haut -->
     <div class="conteneur">
         <div id="logo"><img class="logo" src="images/logo_METEON.png"></div>
@@ -38,9 +39,7 @@
         <!-- Fin menu latéral droit -->
         <!-- Div pour la carte humeur-->
         <div class="carte_humeur">    
-            <marquee id="boiteAlerte" behavior='scroll'>Ceci est un message d'alerte.</marquee>
-            <br><br>
-            <button id=lol onclick="toggle_visibility('boiteAlerte');">v</button>
+            <div id="boiteAlerte">Ceci est un message d'alerte.</div>
             <img class="carte" src="images/map.png">
         </div>
         <!-- Fin de la carte humeur-->
