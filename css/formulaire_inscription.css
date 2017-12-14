@@ -34,8 +34,12 @@ width: 250px;
 
 #bouton
 {
-	background-color: #ff0066;
-	color: white;
+	border: 1px solid white;
+    padding: 5px;
+    color: white;
+    white-space: nowrap;
+    background-color: #ff0066;
+    width: 70px;
 }
 
 /* A rendre plus propre quand on aura le temps (faire disparaitre les bandes blanches)*/
@@ -50,8 +54,8 @@ table{
 	justify-content: center;
     width: 410px;
     background-color: white;
-    margin-top: 70px;
     background-color: #dfe0e2;
 	padding-top: 20px;
 	padding-bottom: 30px;
+
 }
