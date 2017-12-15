@@ -6,7 +6,7 @@
 	 ini_set('display_errors','On');
 
 
-	$test = "host=localhost port=5432 dbname=nico user=vincent password=1a2b3c4D";
+	$test = "host=localhost port=5432 dbname= user= password=";
 
 
 	$connect = pg_connect($test);
