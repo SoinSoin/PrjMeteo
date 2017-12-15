@@ -1,8 +1,6 @@
 /*J'importe ma police pour pouvoir l'utiliser*/
-@import 
-{
-	url('https://fonts.googleapis.com/css?family=Ubuntu');
-}
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 
 /*La partie qui suit sert a faire en sorte 
 que mon container principal prenne toute la
