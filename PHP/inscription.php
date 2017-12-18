@@ -45,7 +45,7 @@
 
 				// ici je lui demande les mdp sont les mêmes
 				if ($motdepassee == $motdepassee2) {
-			
+				// si toute les condition sont valide je lui demande de l'envoyer dans la BDD
 				$inserBDD -> execute (array($nomm, $prenomm, $maill, $pass_hache, $nomregionn));
 				echo "envoyé";
 			 		} 
