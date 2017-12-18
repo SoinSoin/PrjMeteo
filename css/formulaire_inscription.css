@@ -40,6 +40,7 @@ width: 250px;
     white-space: nowrap;
     background-color: #ff0066;
     width: 70px;
+	margin-top: 15px;
 }
 
 /* A rendre plus propre quand on aura le temps (faire disparaitre les bandes blanches)*/
