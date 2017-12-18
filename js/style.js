@@ -22,19 +22,54 @@ function getValueSix() {
 function MapIcone() {
 
     if (number == 1) {
-        document.getElementById("ico").src = "images/ico_rainbow.png"
-
+        document.getElementById("ico").src = "images/ico_rainbow.png";
+        document.getElementById("premiere_icone").src = "images/ico_rainbow2.png";
+        document.getElementById("deuxieme_icone").src = "images/ico_soleil.png";
+        document.getElementById("troisieme_icone").src = "images/ico_brouillard.png";
+        document.getElementById("quatrieme_icone").src = "images/ico_pluie.png";
+        document.getElementById("cinquieme_icone").src = "images/ico_vent.png";
+        document.getElementById("sizieme_icone").src = "images/ico_orage.png";
         //document.getElementById("premiere_icone").src = "images/ico_soleil.png"
     } else if (number == 2) {
         document.getElementById("ico").src = "images/ico_soleil.png"
+        document.getElementById("premiere_icone").src = "images/ico_rainbow.png";
+        document.getElementById("deuxieme_icone").src = "images/ico_soleil2.png";
+        document.getElementById("troisieme_icone").src = "images/ico_brouillard.png";
+        document.getElementById("quatrieme_icone").src = "images/ico_pluie.png";
+        document.getElementById("cinquieme_icone").src = "images/ico_vent.png";
+        document.getElementById("sizieme_icone").src = "images/ico_orage.png";
     } else if (number == 3) {
         document.getElementById("ico").src = "images/ico_brouillard.png"
+        document.getElementById("premiere_icone").src = "images/ico_rainbow.png";
+        document.getElementById("deuxieme_icone").src = "images/ico_soleil.png";
+        document.getElementById("troisieme_icone").src = "images/ico_brouillard2.png";
+        document.getElementById("quatrieme_icone").src = "images/ico_pluie.png";
+        document.getElementById("cinquieme_icone").src = "images/ico_vent.png";
+        document.getElementById("sizieme_icone").src = "images/ico_orage.png";
     } else if (number == 4) {
         document.getElementById("ico").src = "images/ico_pluie.png"
+        document.getElementById("premiere_icone").src = "images/ico_rainbow.png";
+        document.getElementById("deuxieme_icone").src = "images/ico_soleil.png";
+        document.getElementById("troisieme_icone").src = "images/ico_brouillard.png";
+        document.getElementById("quatrieme_icone").src = "images/ico_pluie2.png";
+        document.getElementById("cinquieme_icone").src = "images/ico_vent.png";
+        document.getElementById("sizieme_icone").src = "images/ico_orage.png";
     } else if (number == 5) {
         document.getElementById("ico").src = "images/ico_vent.png"
+        document.getElementById("premiere_icone").src = "images/ico_rainbow.png";
+        document.getElementById("deuxieme_icone").src = "images/ico_soleil.png";
+        document.getElementById("troisieme_icone").src = "images/ico_brouillard.png";
+        document.getElementById("quatrieme_icone").src = "images/ico_pluie.png";
+        document.getElementById("cinquieme_icone").src = "images/ico_vent2.png";
+        document.getElementById("sizieme_icone").src = "images/ico_orage.png";
     } else {
         document.getElementById("ico").src = "images/ico_orage.png"
+        document.getElementById("premiere_icone").src = "images/ico_rainbow.png";
+        document.getElementById("deuxieme_icone").src = "images/ico_soleil.png";
+        document.getElementById("troisieme_icone").src = "images/ico_brouillard.png";
+        document.getElementById("quatrieme_icone").src = "images/ico_pluie.png";
+        document.getElementById("cinquieme_icone").src = "images/ico_vent.png";
+        document.getElementById("sizieme_icone").src = "images/ico_orage2.png";
     }
 }
 
