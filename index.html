@@ -17,11 +17,11 @@
 			<!--ceci est la div du centre avec la connexion-->
 				<div id="centerup">
 			<!--tableau avec les inputs pour le mail le mdp  ainsi que les bouton connexion, mdp lost, inscription-->
-				<form>
+				<form action="home.php" method="post">
 					<table>
 						<p>
 							<label>Veuillez entrer votre adresse mail :</label> <br><br>
-							<input type="email" name="mail@" placeholder="ex: john-smith@cliché.com" >
+							<input type="email" name="mail" placeholder="ex: john-smith@cliché.com" >
 						</p>
 						<br>
 						<p>
@@ -31,7 +31,7 @@
 						<br>
 					</table>
 				<!-- Lien a définir avec le SQL/PHP afin d'amener sur la page apprenant/formateur en fonction du profil -->
-					<input type="button" name="Connexion"  value="Connexion" onclick="" id="connexion" >
+					<input class="button" type="submit" name="Connexion"  value="Connexion" id="connexion" >
 					<br><br>
 					<a href="formulaire_inscription.html">Inscription</a>
 					<br>
