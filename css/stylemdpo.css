@@ -37,7 +37,11 @@ le centre*/
 	padding-top: 20px;
 	padding-bottom: 20px;
 	width: 500px;
+	text-align: center;
 }
+
+/*Ici je stylise le bouton "valider"*/
+
 #bouton 
 {
 	border: 1px solid white;
@@ -47,8 +51,4 @@ le centre*/
     background-color: #ff0066;
     width: 70px;
 	margin-top: 15px;
-}
-#champ
-{
-	text-align: center;
 }
