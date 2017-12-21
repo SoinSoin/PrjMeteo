@@ -29,6 +29,7 @@
     <div id="humeur">
 
         <div id="formulaire">
+<!-- <<<<<<< HEAD
 
             <form id="formulaire_humeur" method="post" action="traitement.php">
 
@@ -84,6 +85,25 @@ $result = pg_query($query);
 
 ?>
 
+======= -->
+        	<form id="formulaire_humeur" method="post" action="traitement.php">
+            <p id="texte_humeur">De quelle humeur êtes vous?</p>
+            <img src="images/ico_rainbow.png" title="arc_en_ciel" class="icones" id="premiere_icone" value="1" onclick="getValueUn();MapIcone()" style="cursor:pointer;" >
+            </img>
+            <img src="images/ico_soleil.png" title="Soleil" class="icones" value="2" id="deuxieme_icone" onclick="getValueDeux();MapIcone()" style="cursor:pointer;" >
+            </img>
+            <img src="images/ico_brouillard.png" title="vent" class="icones" value="3" id="troisieme_icone" onclick="getValueTrois();MapIcone()" style="cursor:pointer;" >
+            </img>
+            <img src="images/ico_pluie.png" title="pluie" class="icones" value="3" id="quatrieme_icone" onclick="getValueQuatre();MapIcone()" style="cursor:pointer;" >
+            </img>
+            <img src="images/ico_vent.png" title="brouillard" class="icones" value="4" id="cinquieme_icone" onclick="getValueCinq();MapIcone()"  style="cursor:pointer;" >
+            </img>
+            <img src="images/ico_orage.png" title="orage" class="icones" value="5" id="sizieme_icone" onclick="getValueSix();MapIcone()" style="cursor:pointer;" >
+            </img>
+            <textarea id="commentaire" placeholder="Commentaire" maxlength="200" value="" id= onclick="javascript:getComment()" style="cursor:pointer;" ></textarea>
+            <input id="valider" type="button" value="Valider" onclick="masquer_div('humeur');MapIcone()" />
+        </form>
+      
         </div>
 
     </div>
@@ -103,10 +123,22 @@ $result = pg_query($query);
         <img src="images/logo_METEON.png" title="logo" class="logo"></img>
 
     </div>
+<!-- <<<<<<< HEAD
 
     <div id="diventre"></div>
 
     <div id="date"></div>
+
+======= -->
+    <!-- Fonctionnel mais a refaire en virant toute les div inutiles, on le fera quand on aura le temps -->
+    <div id="divinutile"></div>
+    <!-- dive a enlever, ce n'est pas une priorité -->
+    <div id="divinutile2"></div>
+    <!-- Les boutons sont non cliquables tant que l'humeur n'est pas définie car on ne veut pas qu'ils le soient afin d'être sur que les gens remplissent l'humeur -->
+    <div id="date"><!-- <a href="index.html" id="bouton_deconnexion">Déconnexion</a> --></div>
+    <div id="divinutile3"><!-- <a href="formulaire_modifications.html" id="bouton_modifier">Modifier</a> --></div>
+    <!-- Bouton/lien profil (la serrure) a peut etre remettre si jamais on garde la fonctionnalité -->
+    <!--<div id="profil">Profil</div>-->
 
     <div id="n_p">Nom Prenom
 
@@ -153,6 +185,7 @@ $result = pg_query($query);
 
 
     <div id="carte">
+<!-- <<<<<<< HEAD
 
         <img id="img_carte" src="images/map.jpg">
 
@@ -271,7 +304,54 @@ $result = pg_query($query);
             </div>
 
             <div class="item15">
-                <img src=images/ico_soleil.png>
+                <img src=images/ico_soleil.png> -->
+
+
+        <img id=imgMap src="images/map.jpg">
+        <div class="wrapper">
+            <div class="item1"><img id="ico" src="" title="y">
+                <br />
+                <span>mon texte</span></div>
+            <div class="item2"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item3"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item4"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item5"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item6"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item7"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item8"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item9"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item10"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item11"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item12"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item13"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item14"><img id="ico" src=images/ico_soleil.png>
+                <br />
+                <span>mon texte</span></div>
+            <div class="item15"><img id="ico" src=images/ico_soleil.png>
 
                 <br />
 
