@@ -31,3 +31,11 @@ valeur TRUE or ici on l'inverse afin d'afficher l'alert avant la redirection*/
 	document.location.href="index.html";
 	}
 }
+
+
+function confirme_ajout(){
+	var mail = document.getElementById('mai_l');
+	console.log(mail);
+	if (confirm("Etes-vous sur de vouloir ajouter " + mail.value + " ?")){
+}
+}
