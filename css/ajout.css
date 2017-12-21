@@ -27,14 +27,17 @@ select {
 }
 
 .box {
-    width: 370px;
+    display: inline-block;
+    justify-content: center;
+    width: 400px;
+    border: 1em;
     background-color: white;
     margin: 0 auto;
     background-color: #dfe0e2;
     padding-top: 20px;
     padding-bottom: 20px;
 <<<<<<< HEAD
-    	color: #ff0066;
+    color: #ff0066;
 	text-align: center;
    
 }
