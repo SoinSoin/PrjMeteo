@@ -186,6 +186,20 @@ body {
     white-space: nowrap;
 }
 
+/* boîte d'alerte */
+
+#boiteAlerte{
+    width: 100%;
+    font-weight: bolder;
+    background-color: red;
+    color: white;
+    text-align:center;
+    /*visibility: hidden;*/
+    position: absolute;
+    display: block;
+}
+
+
 
 /* image */
 .graphique{
