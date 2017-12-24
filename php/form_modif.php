@@ -3,7 +3,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors','On');
 
-	$test = "host=localhost port=5432 dbname=projet_meteon user=thomasp password=elpinus09";
+	$test = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
 
 	//On se connecte a la bdd
 	$connect = pg_connect($test);

@@ -1,4 +1,6 @@
+
 //Cette fonction sert a rendre le reste de la page incliquable (sauf le menu humeur)
+
 function getValueUn() {
     number = 1;
 }
@@ -17,7 +19,6 @@ function getValueCinq() {
 function getValueSix() {
     number = 6
 }
-
 
 function MapIcone() {
 
@@ -73,7 +74,7 @@ function MapIcone() {
     }
 }
 
-
+// Fonction pour cacher le formulaire de l'humeur dans la page apprenant
 
 function masquer_div(id) {
     document.getElementById(id).style.display = 'none';
@@ -82,8 +83,8 @@ function masquer_div(id) {
 
 }
 
-//Cette fonction sert a afficher la date du jour en format jour/mois/année, merci a Pilou pour le code
-// mais pas l'indentation :d
+//Cette fonction sert a afficher la date du jour en format jour/mois/année
+
 function myFunction() {
     var d = new Date();
     var weekday = new Array(7);
@@ -122,11 +123,14 @@ function myFunction() {
 }
 myFunction()
 
-// Fonctions de redirection
-function redirection_accueil() {
-    document.location.href = "index.html";
+// Fonction de redirection vers la page pour se connecter
+
+function redirection_index() {
+    document.location.href = "index.php";
 }
 
+// Fonction de redirection vers la page pour modifier les informations personnelles
+
 function redirection_modif() {
-    document.location.href = "formulaire_modifications.html";
+    document.location.href = "formulaire_modifications.php";
 }

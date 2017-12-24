@@ -1,6 +1,5 @@
 <?php
 
-
     //on utilise la fonction session_start pour démarrer une session et obtenir un numéro de session
     session_start();
 
@@ -11,7 +10,7 @@
     setcookie('mail',$mail,time()+365*24*3600,null,null,false,true);
 
     //on fait une requête sql afin de récupérer le statut attaché au mail
-    $test = "host=localhost port=5432 dbname=projetmeteo user=nicoadmin password=simplon1987";
+    $test = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
     
     $connect = pg_connect($test);
     
@@ -22,31 +21,31 @@
     // echo "$resultat[0]";
 
     //on créé une fonction php qui nous servira à nous rediriger vers la page principale en fonction du statut
-    // funtion redirection(){
-    //     if($resultat[0] == 2){
-    //         header('Location: page_apprenants.php');
-    //     }
-    //     else{
-    //         header('Location: page_formateurs.php');
-    //     }
-    // }
 
+    
+// if(){
+//     }
+// else{
+//         if ($requete[0] = 1) {
+//             header('Location: page_formateurs.php');
+//         }
+//         else if ($requete[1] = 2) {
+//             header('Location: page_apprenants.php');
+//         }
+//     }
 ?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style_accueil.css">
+    <link rel="stylesheet" type="text/css" href="css/style_index.css">
     <title>METEON - La météo des humeurs</title>
 </head>
 
 <body>
     <h1>Bienvenue sur la météo du jour</h1>
-    <!--ceci est la div du centre avec la connexion-->
-    <form id=formulaire method="post" action="">
+    <form id=formulaire method="post" action="page_apprenants.php">
         <p>
             <label>Veuillez entrer votre adresse mail :</label>
             <br>
@@ -55,17 +54,17 @@
         </p>
         <br>
         <p>
-            <label>Veuille entrer votre mot de passe :</label>
+            <label>Veuillez entrer votre mot de passe :</label>
             <br>
             <br>
             <input type="password" name="password" placeholder="mot de passe">
         </p>
         <!-- Lien a définir avec le SQL/PHP afin d'amener sur la page apprenant/formateur en fonction du profil -->
-        <input type="submit" name="Connexion" value="Connexion" id="connexion">
+        <input type="submit" name="connexion" value="Connexion" id="connexion">
         <br><br>
-        <a href="formulaire_inscription.html">Inscription</a>
+        <a href="formulaire_inscription.php">Inscription</a>
         <br>
-        <a href="formulaire_mdp_oublie.html">Mot de passe oublié ?</a>
+        <a href="formulaire_mdp_oublie.php">Mot de passe oublié ?</a>
     </form>
     <br>
     <br>

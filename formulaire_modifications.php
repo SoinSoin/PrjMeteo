@@ -4,16 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>METEON - Modifier votre profil</title>
-    <link rel="stylesheet" type="text/css" href="css/style_modif.css">
+    <link rel="stylesheet" type="text/css" href="css/style_form_modif.css">
 </head>
-
-
 
 <body>
     <h1>Modifier votre profil</h1>
-    <!--corps du formulaire-->
-    <form id="formulaire" method="post" action="form_modif.php">
-        <!--champs à remplir-->
+    <form id="formulaire" method="post" action="php/form_modif.php">
         <label>Votre nom :</label>
         <br>
         <br>
@@ -44,13 +40,9 @@
         <input type="text" name="nomderegion" placeholder=" Nouveau nom de région">
         <br>
         <br>
-        <!--boutons-->
-        <!-- Lien a faire en SQL/PHP-->
-        <input id="valider" class="bouton" type="submit" name="Valider" value="Valider">
-        <input id="annuler" class="bouton" type="submit" name="Annuler" value="Annuler">
+        <input id="valider" class="bouton" type="submit" name="Valider" value="Valider" onclick="">
+        <input id="annuler" class="bouton" type="submit" name="Annuler" value="Annuler" onclick=""> 
     </form>
-    <!--cellule 3-->
-
 </body>
 
 </html>

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
-<!-- fomulaire créé par julien chénel -->
 
 <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/formulaire_inscription.css">
+    <link rel="stylesheet" type="text/css" href="css/style_form_inscription.css">
     <title>METEON - Inscription</title>
 </head>
 
 <body>
-
-
     <h1>Formulaire d'inscription</h1>
-    <form id="formulaire" method="post" action="PHP/inscription.php">
+    <form id="formulaire" method="post" action="php/inscription.php">
         <p>
             <label>Votre nom</label> :
             <br>
@@ -37,13 +33,13 @@
             <label>Votre mot de passe</label> :
             <br>
             <br>
-            <input class="input" type="password" name="motdepasse " placeholder="mot de passe" required/>
+            <input class="input" type="password" name="motdepasse" placeholder="mot de passe" required/>
         </p>
         <p>
             <label>Confirmer votre mot de passe</label> :
             <br>
             <br>
-            <input type="password" name="motdepasse" placeholder="mot de passe" required/>
+            <input type="password" name="motdepasse2" placeholder="mot de passe" required/>
         </p>
         <p>
             <label>Nom de la région</label> :
@@ -53,7 +49,6 @@
         </p>
         <input type="submit" name="envoyer" id="bouton">
     </form>
-
 </body>
 
 </html>

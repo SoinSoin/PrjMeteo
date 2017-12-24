@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+html {
+    text-align: center;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ff0066;
+    margin: 0;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+#formulaire {
+    margin: 0 auto;
+    background-color: #dfe0e2;
+    width: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input {
+    width: 250px;
+    display: inline-block;
+}
+
+#annuler {
+    width: 100px;
+}
+
+#valider {
+    width: 100px;
+}
+
+.bouton {
+    border: 1px solid white;
+    padding: 5px;
+    color: white;
+    white-space: nowrap;
+    background-color: #ff0066;
+}
