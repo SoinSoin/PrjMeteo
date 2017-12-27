@@ -7,7 +7,7 @@ ini_set('display_errors','On');
 
 //connexion bdd locale
 
-$logIn = "host=localhost port=5432 dbname=meteon user=test password=connexion";//infos de connexion, à remplacer en fonction de la BDD
+$logIn = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";//infos de connexion, à remplacer en fonction de la BDD
 
 $connect = pg_connect($logIn);// on utilise les infos de connexion
 
@@ -24,7 +24,5 @@ $foo = pg_query("SELECT 'mail', 'motdepasse' FROM utilisateur WHERE  'mail'='".$
 var_dump($foo);//imprimer le résultat de la variable $foo dans le var dump
 
 pg_close($connect);//déconnexion en fin de requête nécessaire pour imprimer le var dump
-
-
 
 ?>

@@ -1,57 +1,37 @@
-/*police ubuntu*/
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-html
-{
-	text-align: center;
-}
 
-body 
-{
-	font-family: 'Ubuntu', sans-serif;
-	color: #ff0066;
+html {
+	height: 100%;
 	margin: 0;
 	background-color: white;
+	font-family: 'Ubuntu' , sans-serif;
 }
 
-/*style du titre*/
-h1 
-{
+#titre {
 	text-align: center;
 }
 
-/*Style du formulaire */
+h1,p {
+	color: #ff0066;
+	padding-bottom: 10px;
+	text-align: center;
+}
 
 #formulaire {
 	margin: 0 auto;
 	background-color: #dfe0e2;
-	width: 400px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	width: 500px;
+	text-align: center;
 }
 
-input 
-{
-	width: 250px;
-	display: inline-block;
-
-}
-
-#annuler 
-{
-	width: 100px;
-}
-
-#valider 
-{
-
-	width: 100px;
-}
-
-/*style bouton*/
-.bouton {
+#bouton {
 	border: 1px solid white;
     padding: 5px;
     color: white;
     white-space: nowrap;
     background-color: #ff0066;
+    width: 70px;
+	margin-top: 15px;
 }
