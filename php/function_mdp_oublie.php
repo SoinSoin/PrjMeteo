@@ -4,7 +4,7 @@ var_dump($_POST);
 
 
 //connexion bdd locale
-$test = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
+$test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
 $connect = pg_connect($test);
 
