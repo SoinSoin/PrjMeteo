@@ -10,7 +10,7 @@
     setcookie('mail',$mail,time()+365*24*3600,null,null,false,true);
 
     //on fait une requête sql afin de récupérer le statut attaché au mail
-    $test = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
+    $test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
     
     $connect = pg_connect($test);
     

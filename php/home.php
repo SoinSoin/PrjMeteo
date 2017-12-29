@@ -7,7 +7,7 @@ ini_set('display_errors','On');
 
 //connexion bdd locale
 
-$logIn = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";//infos de connexion, à remplacer en fonction de la BDD
+$logIn = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";//infos de connexion, à remplacer en fonction de la BDD
 
 $connect = pg_connect($logIn);// on utilise les infos de connexion
 

@@ -45,7 +45,7 @@
             <label>Nom de la région</label> :
             <br>
             <br>
-            <input type="text " name="nomregion" placeholder="Ex : Fantasia" required/>
+            <input type="text " name="nomderegion" placeholder="Ex : Fantasia" required/>
         </p>
         <input type="submit" name="envoyer" id="bouton">
     </form>
