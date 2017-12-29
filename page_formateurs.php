@@ -4,7 +4,7 @@ session_start();
 
 $iduser = $_COOKIE['mail'];
 
-$test = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
+$test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
 $connect = pg_connect($test);
 
@@ -19,7 +19,6 @@ $resultat = pg_fetch_array($requete);
 <head>
     <title>Page météo</title>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style_formateurs.css">
     <link rel="stylesheet" type="text/css" href="css/style_menu_haut_et_carte.css">
 </head>

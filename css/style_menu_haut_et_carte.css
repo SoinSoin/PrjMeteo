@@ -25,7 +25,7 @@
     position: absolute;
     top: 0;
     left: 20%;
-    border-bottom: 2px solid #ff0066
+    border-bottom: 2px solid #ff0066;
 }
 
 #date {
@@ -36,7 +36,7 @@
     position: absolute;
     top: 35px;
     right: 20%;
-    border-bottom: 2px solid #ff0066
+    border-bottom: 2px solid #ff0066;
 }
 
 #n_p {
@@ -92,24 +92,29 @@
     position: absolute;
     top: 80px;
     left: -100px;
+    z-index: -1;
 }
 
 .ico {
     width: 40px;
 }
 
+
+/* il faut changer les % pour les adapter a un écran classique,
+il faudrait replacer l'id carte pour pouvoir utiliser un margin auto
+sur la div img_carte */
 #img_carte {
-    margin-left: 300px;
+    margin-left: 14%;
 }
 
 .wrapper {
     position: absolute;
     top: 80px;
-    left: 400px;
+    left: 27%;
     display: grid;
     grid-template-columns: 100px 100px 100px 100px 100px 100px;
-    grid-auto-rows: 80px;
-    grid-template-areas: "a b c d e f" "g h i j k l" "m n o p q r" "s t u v w x" "aa ab ac ad ae af" "ag ah ai aj ak al";
+    grid-auto-rows: 50px;
+    grid-template-areas: "a b c d e f" "g h i j k l" "m n o p q r" "s t u v w x" "aa ab ac ad ae af" "ag ah ai aj ak al" "bb ba bc bd be bf";
 }
 
 .wrapper img {

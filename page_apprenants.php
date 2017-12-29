@@ -4,7 +4,7 @@ session_start();
 
 $iduser = $_COOKIE['mail'];
 
-$test = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
+$test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
 $connect = pg_connect($test);
 
@@ -33,20 +33,20 @@ $resultat = pg_fetch_array($requete);
         <div id="formulaire">
             <form id="formulaire_humeur" method="post" action="traitement.php">
                 <p id="texte_humeur">De quelle humeur êtes vous?</p>
-                <img src="images/ico_rainbow.png" title="Arc en ciel" class="icones" id="premiere_icone" value="1" onclick="getValueUn();MapIcone()" style="cursor:pointer;">
+                <img src="images/ico_rainbow.png" title="Arc en ciel" class="icones" id="premiere_icone" value="1" onclick="getValueUn();MapIcone()">
                 </img>
-                <img src="images/ico_soleil.png" title="Soleil" class="icones" value="2" id="deuxieme_icone" onclick="getValueDeux();MapIcone()" style="cursor:pointer;">
+                <img src="images/ico_soleil.png" title="Soleil" class="icones" value="2" id="deuxieme_icone" onclick="getValueDeux();MapIcone()">
                 </img>
-                <img src="images/ico_brouillard.png" title="Vent" class="icones" value="3" id="troisieme_icone" onclick="getValueTrois();MapIcone()" style="cursor:pointer;">
+                <img src="images/ico_brouillard.png" title="Vent" class="icones" value="3" id="troisieme_icone" onclick="getValueTrois();MapIcone()">
                 </img>
-                <img src="images/ico_pluie.png" title="Pluie" class="icones" value="3" id="quatrieme_icone" onclick="getValueQuatre();MapIcone()" style="cursor:pointer;">
+                <img src="images/ico_pluie.png" title="Pluie" class="icones" value="3" id="quatrieme_icone" onclick="getValueQuatre();MapIcone()">
                 </img>
-                <img src="images/ico_vent.png" title="Brouillard" class="icones" value="4" id="cinquieme_icone" onclick="getValueCinq();MapIcone()" style="cursor:pointer;">
+                <img src="images/ico_vent.png" title="Brouillard" class="icones" value="4" id="cinquieme_icone" onclick="getValueCinq();MapIcone()">
                 </img>
-                <img src="images/ico_orage.png" title="Orage" class="icones" value="5" id="sizieme_icone" onclick="getValueSix();MapIcone()" style="cursor:pointer;">
+                <img src="images/ico_orage.png" title="Orage" class="icones" value="5" id="sizieme_icone" onclick="getValueSix();MapIcone()">
                 </img>
 
-                <textarea id="commentaire" placeholder="Commentaire" maxlength="200" value="" id=o nclick="javascript:getComment()" style="cursor:pointer;"></textarea>
+                <textarea id="commentaire" placeholder="Commentaire" maxlength="200" value="" onclick="javascript:getComment()"></textarea>
 
                 <input id="valider" type="button" value="Valider" onclick="masquer_div('humeur');MapIcone()" />
             </form>
@@ -61,7 +61,7 @@ $resultat = pg_fetch_array($requete);
     <div id="n_p">
         <span id="php_np">
             <!-- Requete pour afficher nom et prenom -->
-            <?php echo "$resultat[0] $resultat[1]";?>
+            <?php echo "$resultat[1] $resultat[0]";?>
         </span>
         <div id="pos_bouton">
             <input type="button" name="boutonmodif" onclick="redirection_modif()" id="bouton_modifier" value="Modifier">
@@ -69,11 +69,11 @@ $resultat = pg_fetch_array($requete);
         </div>
     </div>
     <div id="menu_lat_droit">
-        <div id="j_quatre">J-4</div>
-        <div id="j_trois">J-3</div>
-        <div id="j_deux">J-2</div>
-        <div id="j_un">J-1</div>
-        <div id="total_ico_jour">Total des icones</div>
+        <div class="histo_jour">J-4</div>
+        <div class="histo_jour">J-3</div>
+        <div class="histo_jour">J-2</div>
+        <div class="histo_jour">J-1</div>
+        <div class="histo_jour">Total des icones</div>
         <div id="humeur_stat">Humeur stat</div>
     </div>
     <div id="carte">

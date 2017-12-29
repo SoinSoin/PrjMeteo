@@ -3,7 +3,6 @@
 
 <head>
     <title>Ajouter utilisateur</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style_ajout.css">
 </head>
 

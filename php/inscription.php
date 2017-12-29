@@ -1,51 +1,50 @@
 <?php
-
-	 error_reporting(E_ALL);
-
-	 ini_set('display_errors','On');
-
-	 // ici je me connacte à la BDD en indiquant que j'utilise le pilote PDO natif à PHP j'utilise donc:
-
-	$BDD = "host=localhost port=5432 dbname=deusxmachina user=admin password=admin";
+	$BDD = "host=localhost port=5432 dbname=bdd_meteon user=admin  password=admin";
 	$connect = pg_connect($BDD);
-
-
-	//ici pas de changement je créé mes variables qui doivent être les même que ceux de l'input name dans le hmtl
 
 	$nomm = $_POST['nom'];
 	$prenomm = $_POST['prenom'];
 	$maill = $_POST['mail'];
 	$motdepassee = $_POST ['motdepasse'];
 	$motdepassee2 = $_POST ['motdepasse2'];
-               $nomregionn = $_POST ['nomregion'];
+    $nomregionn = $_POST ['nomregion'];
 	$pass_hache = password_hash ('motdepasse',PASSWORD_BCRYPT);
 
-if (filter_var($maill, FILTER_VALIDATE_EMAIL)) {
-		$verifmail = pg_query("SELECT mail FROM utilisateur WHERE mail = '".$maill."' ; ");
-                               $result=pg_fetch_array($verifmail);
-                                // print_r( "$result[]");
-
-	if ($result[0] == $maill) {
-
-		if ($motdepassee == $motdepassee2) {
-			$verifregion = pg_query("SELECT 'nomregion' FROM utilisateur WHERE 'nomregion' = '".$nomregionn."'; ");
-				$resulltregion = pg_fetch_array($verifregion);
-          if ($nomregionn == $resulltregion[0]) {
-          	$inserBDD = pg_query("INSERT INTO utilisateur (nom, prenom, mail, motdepasse, nomregion) VALUES ('".$nomm."' ,  '".$prenomm."', '".$maill."', '".$pass_hache."', '".$nomregionn."' )");} 
-          	else {echo "Cette region existe déja";
-                                                            }
-                              }
-		else {
+if (filter_var($maill, FILTER_VALIDATE_EMAIL))
+{	
+	$verifmail = pg_query("SELECT mail FROM utilisateur WHERE mail = '".$maill."' ; ");
+	$result=pg_fetch_array($verifmail);
+	//print_r( $result);
+	if ($result[0] == $maill)
+	{
+		if ($motdepassee == $motdepassee2)
+		{	
+			$verifregion = pg_query("SELECT nomregion  FROM utilisateur WHERE  nomregion = '".$nomregionn."'; ");
+			$resultregion = pg_fetch_array($verifregion);
+			if ($nomregionn == $resultregion[0])
+			{
+				// $inserBDD = pg_query("INSERT INTO utilisateur (nom, prenom, mail, motdepasse, nomregion) VALUES ('".$nomm."' ,  '".$prenomm."', '".$maill."', '".$pass_hache."', '".$nomregionn."' );");
+				//A tester avec des valeurs bidons pour les VALUES on va rentrer nous meme les champs au lieu de récupérer ceux sur la page
+			} 
+			else 
+			{
+				 echo "Cette region existe déja"; 
+			}
+		} 
+		else 
+		{
 			echo "Vos mots de passe ne sont pas les mêmes ";
 		}
-
+	} 
+	else 
+	{
+		echo "Votre mail n'est pas pris en compte par nos services";
 	}
-	else {
-	echo "Votre mail n'est pas pris en compte par nos services";
-	}
-}
- else {
+} 
+else 
+{
 	echo "Le mail saisi n'est pas conforme";
 }
 
 ?>
+
