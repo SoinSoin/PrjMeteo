@@ -2,7 +2,7 @@
 
 session_start();
 
-$iduser = $_COOKIE['mail'];
+$iduser = $_COOKIE['e_mail'];
 
 $test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 

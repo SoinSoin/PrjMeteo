@@ -2,7 +2,7 @@
 
 session_start();
 
-$iduser = $_COOKIE['mail'];
+$iduser = $_COOKIE['e_mail'];
 
 $test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
@@ -34,7 +34,7 @@ $resultat = pg_fetch_array($requete);
     <div id="date"></div>
     <div id="n_p">
         <span id="php_np">
-            <!-- Requete pour afficher nom et prenom --><?php echo "$resultat[0] $resultat[1]";?>
+            <!-- Requete pour afficher nom et prenom --><?php echo "$resultat[1] $resultat[0]";?>
         </span>
     </div>
         <div id="pos_bouton">

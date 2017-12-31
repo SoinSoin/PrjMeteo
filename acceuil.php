@@ -1,38 +1,28 @@
 <?php
-
     //on utilise la fonction session_start pour démarrer une session et obtenir un numéro de session
     session_start();
 
     //on récupère ce qu'on a rentré dans  l'input mail@
     $mail = $_POST['mail@'];
 
-    //on créé un cookie et on y intègre notre variable contenant le mail (on détermine la durée de vie du cookie ainsi que les options de sécurité)
-    setcookie('mail',$mail,time()+365*24*3600,null,null,false,true);
 
-    //on fait une requête sql afin de récupérer le statut attaché au mail
     $test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
-    
     $connect = pg_connect($test);
     
-    $requete = pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';");
-
-    $resultat = pg_fetch_array($requete);
-
-    // echo "$resultat[0]";
-
     //on créé une fonction php qui nous servira à nous rediriger vers la page principale en fonction du statut
-
     
-// if(){
-//     }
-// else{
-//         if ($requete[0] = 1) {
-//             header('Location: page_formateurs.php');
-//         }
-//         else if ($requete[1] = 2) {
-//             header('Location: page_apprenants.php');
-//         }
-//     }
+if(isset($mail)){
+    //cette condition me permet de conditionner la création du cookie et ma requête à l'envoie des données de mon formulaire via la méthode post
+        session_start();
+        setcookie('e_mail',$mail,time()+365*24*3600,null,null,false,true);
+        $requete = pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';");
+        $resultat = pg_fetch_array($requete);
+            if($resultat[0]==1) {
+                header('Location: page_formateurs.php');
+            }
+            else{
+                header('Location: page_apprenants.php');
+            }
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,7 +35,7 @@
 
 <body>
     <h1>Bienvenue sur la météo du jour</h1>
-    <form id=formulaire method="post" action="page_apprenants.php">
+    <form id=formulaire method="post" action="">
         <p>
             <label>Veuillez entrer votre adresse mail :</label>
             <br>
