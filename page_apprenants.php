@@ -4,14 +4,13 @@ session_start();
 
 $iduser = $_COOKIE['e_mail'];
 
-$test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
+$bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
-$connect = pg_connect($test);
+$connect = pg_connect($bd);
 
 $requete = pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$iduser."';");
 
 $resultat = pg_fetch_array($requete);
-
 
 ?>
 <!DOCTYPE html>

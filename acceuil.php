@@ -6,15 +6,14 @@
     $mail = $_POST['mail@'];
 
 
-    $test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
-    $connect = pg_connect($test);
     
     //on créé une fonction php qui nous servira à nous rediriger vers la page principale en fonction du statut
     
 if(isset($mail)){
     //cette condition me permet de conditionner la création du cookie et ma requête à l'envoie des données de mon formulaire via la méthode post
-        session_start();
         setcookie('e_mail',$mail,time()+365*24*3600,null,null,false,true);
+            $bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
+        $connect = pg_connect($bd);
         $requete = pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';");
         $resultat = pg_fetch_array($requete);
             if($resultat[0]==1) {
@@ -23,6 +22,7 @@ if(isset($mail)){
             else{
                 header('Location: page_apprenants.php');
             }
+    }
 ?>
 <!DOCTYPE html>
 <html>
