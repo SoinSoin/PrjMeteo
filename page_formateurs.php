@@ -34,7 +34,7 @@ $resultat = pg_fetch_array($requete);
     <div id="date"></div>
     <div id="n_p">
         <span id="php_np">
-            <!-- Requete pour afficher nom et prenom --><?php echo "$resultat[1] $resultat[0]";?>
+            <?php echo "$resultat[1] $resultat[0]";?>
         </span>
     </div>
         <div id="pos_bouton">
