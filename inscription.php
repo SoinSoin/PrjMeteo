@@ -34,7 +34,7 @@ if (filter_var($maill, FILTER_VALIDATE_EMAIL)){
 				
 					if ($nomregionn != $resultregion[0]){
 						$inserBDD = pg_query("UPDATE utilisateur  SET nom ='".$nomm."' , prenom ='".$prenomm."', motdepasse ='".$pass_hache."', nomregion ='".$nomregionn."' WHERE mail = '".$maill."';");
-							
+						header('Location:acceuil.php');
 					} 
 					else {
 						echo "Cette region existe déja"; 

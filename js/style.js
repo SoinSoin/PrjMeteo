@@ -116,21 +116,6 @@ function myFunction() {
     var n = weekday[d.getDay()];
     var m = mois[d.getMonth()];
     document.getElementById("date").innerHTML = n + rest + " " + m;
-    //var n2 = weekday[d.getDay()-1];
-    //document.getElementById("demo2").innerHTML = n2;
-    //var n3 = weekday[d.getDay()-2];
-    //document.getElementById("demo3").innerHTML = n3;
+
 }
 myFunction()
-
-// Fonction de redirection vers la page pour se connecter
-
-function redirection_index() {
-    document.location.href = "index.php";
-}
-
-// Fonction de redirection vers la page pour modifier les informations personnelles
-
-function redirection_modif() {
-    document.location.href = "formulaire_modifications.php";
-}

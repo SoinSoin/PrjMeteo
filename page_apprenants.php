@@ -38,11 +38,11 @@ $resultat = pg_fetch_array($requete);
                 </img>
                 <img src="images/ico_brouillard.png" title="Vent" class="icones" value="3" id="troisieme_icone" onclick="getValueTrois();MapIcone()">
                 </img>
-                <img src="images/ico_pluie.png" title="Pluie" class="icones" value="3" id="quatrieme_icone" onclick="getValueQuatre();MapIcone()">
+                <img src="images/ico_pluie.png" title="Pluie" class="icones" value="4" id="quatrieme_icone" onclick="getValueQuatre();MapIcone()">
                 </img>
-                <img src="images/ico_vent.png" title="Brouillard" class="icones" value="4" id="cinquieme_icone" onclick="getValueCinq();MapIcone()">
+                <img src="images/ico_vent.png" title="Brouillard" class="icones" value="5" id="cinquieme_icone" onclick="getValueCinq();MapIcone()">
                 </img>
-                <img src="images/ico_orage.png" title="Orage" class="icones" value="5" id="sizieme_icone" onclick="getValueSix();MapIcone()">
+                <img src="images/ico_orage.png" title="Orage" class="icones" value="6" id="sizieme_icone" onclick="getValueSix();MapIcone()">
                 </img>
 
                 <textarea id="commentaire" placeholder="Commentaire" maxlength="200" value="" onclick="javascript:getComment()"></textarea>

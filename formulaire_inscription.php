@@ -9,7 +9,7 @@
 
 <body>
     <h1>Formulaire d'inscription</h1>
-    <form id="formulaire" method="post" action="php/inscription.php">
+    <form id="formulaire" method="post" action="inscription.php">
         <p>
             <label>Votre nom</label> :
             <br>
