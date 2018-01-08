@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 session_start();
 
@@ -10,7 +10,13 @@ $connect = pg_connect($bd);
 
 $requete = pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$iduser."';");
 
+//$oui= pg_query('SELECT "fk_idutilisateur", "fk_idhumeur", "fk_iddate" FROM meteodujour WHERE "fk_idutilisateur"= 7 AND "fk_iddate" BETWEEN 5 AND 16;');
+
+// $result=pg_fetch_array($oui);
+// print_r($result);
+
 $resultat = pg_fetch_array($requete);
+
 
 ?>
 <!DOCTYPE html>
@@ -19,8 +25,10 @@ $resultat = pg_fetch_array($requete);
 <head>
     <title>Page météo</title>
     <meta charset="utf-8">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style_formateurs.css">
     <link rel="stylesheet" type="text/css" href="css/style_menu_haut_et_carte.css">
+    
 </head>
 
 <body>
@@ -169,8 +177,23 @@ $resultat = pg_fetch_array($requete);
             <input type="submit" name="">
         </form>
     </div>
-    <div id="affichage_stat"></div>
+    <div id="affichage_stat" style="width: 700px; height: 500px">
+    <?php
+    $chainevaleur="";
+    $oui=pg_query('SELECT "fk_idutilisateur", "fk_idhumeur", "fk_iddate" FROM meteodujour WHERE "fk_idutilisateur"= 7 AND "fk_iddate" BETWEEN 5 AND 16;');
+    while($result=pg_fetch_array($oui) ){ 
+        $chainevaleur+=  strval($result[1]);
+    }
+    ?>
+       <canvas id="donnees" type="hidden" value='<?php echo $chainevaleur; ?>'>
+
+        </canvas>
+
+    
+    </div>
     <script type="text/javascript" src="js/style.js"></script>
+    <script type="text/javascript" src="js/stats.js"></script>
+
 </body>
 
 </html>
