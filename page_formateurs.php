@@ -179,10 +179,9 @@ $resultat = pg_fetch_array($requete);
     </div>
     <div id="affichage_stat" style="width: 700px; height: 500px">
     <?php
-    $chainevaleur="";
     $oui=pg_query('SELECT "fk_idutilisateur", "fk_idhumeur", "fk_iddate" FROM meteodujour WHERE "fk_idutilisateur"= 7 AND "fk_iddate" BETWEEN 5 AND 16;');
     while($result=pg_fetch_array($oui) ){ 
-        $chainevaleur+=  strval($result[1]);
+        $chainevaleur.=$result[1];
     }
     ?>
        <canvas id="donnees" type="hidden" value='<?php echo $chainevaleur; ?>'>
