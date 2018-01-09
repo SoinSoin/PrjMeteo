@@ -184,7 +184,7 @@ $resultat = pg_fetch_array($requete);
     while($result=pg_fetch_array($oui) ){ 
         $chainevaleur.=  $result[1];
     }
-    ?>
+    ?> 
        <input id="donnees" type="hidden" value='<?php echo $chainevaleur; ?>'>
 
    
