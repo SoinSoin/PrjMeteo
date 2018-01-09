@@ -20,13 +20,15 @@
     //the google.charts.setOnLoadCallback chain allows to display the chart when the page is loaded
   google.charts.setOnLoadCallback(drawChart);
 
+  
   var tableau = (document.getElementById('donnees').value);
 
   console.log("tableau :",tableau);
 
-  var tableausplit = tableau.split();
+  var tableausplit = tableau.split("");
  
   console.log("tableausplit :",tableausplit);
+
 
   //This is the function to draw the chart
   function drawChart() {
