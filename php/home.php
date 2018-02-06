@@ -1,28 +1,37 @@
 <?php 
 
-//var_dump($_POST);
-
-error_reporting(E_ALL);
-ini_set('display_errors','On');
+var_dump($_POST);
 
 //connexion bdd locale
+$test = "host=localhost port=5432 dbname=meteon user=philou password=prout";
 
-$logIn = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";//infos de connexion, à remplacer en fonction de la BDD
+//connexion a postgres
+$connect = pg_connect($test);
 
-$connect = pg_connect($logIn);// on utilise les infos de connexion
+$mail=$_POST['mail'];
 
-$mail=$_POST['mail'];//Récupération du champ mail depuis l'HTML (user input)
-$password=$_POST['password'];//Récupération du champ password depuis l'HTML (user input)
+//requête utilisé 
+$foo =pg_query("SELECT prenom, nom FROM utilisateur WHERE mail='".$mail."'");
+$resultat =pg_fetch_array($foo);
+var_dump($foo);
 
 
-//Requête SQL : Je vérifie que l'e-mail renseigné est bien dans la base de données et que le mot de passe renseigné lui corresponde.
-pg_query("SELECT 'mail', 'motdepasse' FROM utilisateur WHERE  'mail'='".$mail."' AND 'motdepasse'='".$password."' ;");
+//Envoi du mail
+var_dump(mail($mail, "Mot de passe oublie", "Voici ton mot de passe :$resultat[0]$resultat[1]"));
 
-//Je rentre le requête SQL dans une variable dbidon appelée $foo
-$foo = pg_query("SELECT 'mail', 'motdepasse' FROM utilisateur WHERE  'mail'='".$mail."' AND 'motdepasse'='".$password."' ;");
-
-var_dump($foo);//imprimer le résultat de la variable $foo dans le var dump
-
-pg_close($connect);//déconnexion en fin de requête nécessaire pour imprimer le var dump
+//bouton deconnexion
+pg_close($connect);
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body> 
+    <p> 
+        <?php echo "$resultat[0]$resultat[1]";?> 
+    </p>
+</body>
+</html>
