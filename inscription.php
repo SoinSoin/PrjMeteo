@@ -20,14 +20,12 @@
 	$motdepassee = $_POST ['motdepasse'];
 	$motdepassee2 = $_POST ['motdepasse2'];
     $nomregionn = $_POST ['nomderegion'];
-	$pass_hache = password_hash ('motdepasse',PASSWORD_BCRYPT);
+	$pass_hache = password_hash($motdepassee,PASSWORD_DEFAULT);
 
 if (filter_var($maill, FILTER_VALIDATE_EMAIL)){
 	$verifmail = pg_query("SELECT mail FROM utilisateur WHERE mail = '".$maill."' ; ");
 	$result=pg_fetch_array($verifmail);
-	// print_r( $result[0]);
 		if ($result[0] == $maill){
-			
 			if ($motdepassee == $motdepassee2){
 				$verifregion = pg_query("SELECT nomregion  FROM utilisateur WHERE  nomregion = '".$nomregionn."'  ; ");
 				$resultregion = pg_fetch_array($verifregion);
