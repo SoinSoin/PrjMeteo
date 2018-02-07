@@ -1,29 +1,42 @@
 <?php
+
     //on utilise la fonction session_start pour démarrer une session et obtenir un numéro de session
     session_start();
-
-    //on récupère ce qu'on a rentré dans  l'input mail@
+    error_reporting(E_ALL);
+    //on récupère ce qu'on a rentré dans  l'input mail@ et on hache le mot de passe
     $mail = $_POST['mail@'];
-
+    $mdp = $_POST['password'];
 
     
     //on créé une fonction php qui nous servira à nous rediriger vers la page principale en fonction du statut
-    
-if(isset($mail)){
+    if(isset($mail)){
     //cette condition me permet de conditionner la création du cookie et ma requête à l'envoie des données de mon formulaire via la méthode post
         setcookie('e_mail',$mail,time()+365*24*3600,null,null,false,true);
-            $bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
+       
+        $bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
+       
         $connect = pg_connect($bd);
-        $requete = pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';");
-        $resultat = pg_fetch_array($requete);
-            if($resultat[0]==1) {
+       
+        $resultatverifmdp = pg_fetch_array(pg_query("SELECT motdepasse FROM utilisateur WHERE mail = '".$mail."';"););
+       
+        $hashe = $resultatverifmdp[0];
+        
+        if (password_verify($mdp, $hashe)){ 
+            
+            $requeteStatut= pg_fetch_array(pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';"););
+
+            if($requeteStatut[0]==1) {
                 header('Location: page_formateurs.php');
             }
             else{
                 header('Location: page_apprenants.php');
             }
+        }
+        else{
+            echo "Le mot de passe n'est pas valide";       
+        }
     }
-?>
+>
 <!DOCTYPE html>
 <html>
 
