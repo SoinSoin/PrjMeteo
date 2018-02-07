@@ -78,6 +78,10 @@
     margin-top: 10px;
 }
 
+a.redirection {
+    text-decoration:none;
+}
+
 #profil {
     z-index: -1;
     width: 5%;

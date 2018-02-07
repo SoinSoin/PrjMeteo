@@ -48,6 +48,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style_index.css">
     <title>METEON - La météo des humeurs</title>
+    <script type="text/javascript">
+        history.forward();
+    </script>
 </head>
 
 <body>
@@ -77,6 +80,7 @@
     <div id=citation>
         <script language="javascript" charset="utf-8" src="http://dicocitations.lemonde.fr/citationblog.js"></script>
     </div>
+
 </body>
 
 </html>
