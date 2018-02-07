@@ -21,6 +21,9 @@ $resultat = pg_fetch_array($requete);
     <meta charset="utf-8">  
     <link rel="stylesheet" type="text/css" href="css/style_apprenants.css">
     <link rel="stylesheet" type="text/css" href="css/style_menu_haut_et_carte.css">
+    <script type="text/javascript">
+        history.forward();
+    </script>
 </head>
 
 <body>
@@ -63,8 +66,8 @@ $resultat = pg_fetch_array($requete);
             <?php echo "$resultat[1] $resultat[0]";?>
         </span>
         <div id="pos_bouton">
-            <input type="button" name="boutonmodif" onclick="redirection_modif()" id="bouton_modifier" value="Modifier">
-            <input type="button" name="boutondeco" onclick="redirection_index()" id="bouton_deconnexion" value="Déconnexion">
+            <a href="formulaire_modifications.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier"></a>
+            <a href="deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion"></a>
         </div>
     </div>
     <div id="menu_lat_droit">
