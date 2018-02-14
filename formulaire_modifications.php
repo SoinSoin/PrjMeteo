@@ -41,9 +41,9 @@
         <br>
         <br>
         <input id="valider" class="bouton" type="submit" name="Valider" value="Valider" onclick="redirection_modif()">
+        <a href="annuler_modif.php"><input type="button" id="annuler" class="bouton" name="Annuler" value="Annuler"></a>
     </form>
-    <a href="annuler_modif.php" id="annuler" class="bouton" value="Annuler"> 
-<script src="js/redirection_modif.js"></script> 
+    
 </body>
 
 </html>
