@@ -1,14 +1,6 @@
 <?php
 
-
-
     session_start();
-
-        // A supprimer lors avant la mise n ligne   
-
-    setcookie("e_mail","denisdupuy67@gmail.com");
-
-        // A supprimer lors avant la mise n ligne   
 
     $verif_mail=$_COOKIE['e_mail'];
 
@@ -23,55 +15,36 @@
     $nomregion = $_POST ['nomRegion'];
 
     // on récupère l'ancien mot de passe dans la BDD
-
-    $requeteMdp = pg_query("SELECT motdepasse FROM utilisateur WHERE mail = '".$verif_mail."';");
-
-    $mdpBdd = pg_fetch_array($requeteMdp);
+    $mdpBdd = pg_fetch_array(pg_query("SELECT motdepasse FROM utilisateur WHERE mail = '".$verif_mail."';"));
 
     // Récupération nom utilisateur:
-
-    $requeteNom = pg_query("SELECT nom FROM utilisateur WHERE mail = '".$verif_mail."';");
-
-    $nomBdd = pg_fetch_array($requeteNom);
+    $nomBdd = pg_fetch_array(pg_query("SELECT nom FROM utilisateur WHERE mail = '".$verif_mail."';"));
 
     //Récupération prénom utilisateur:
+    $prenomBdd = pg_fetch_array(pg_query("SELECT prenom FROM utilisateur WHERE mail = '".$verif_mail."';"));
 
-    $requetePrenom = pg_query("SELECT prenom FROM utilisateur WHERE mail = '".$verif_mail."';");
+    //Récupération du nom de région:
+    $regionBdd = pg_fetch_array(pg_query("SELECT nomregion FROM utilisateur WHERE mail = '".$verif_mail."';"));
 
-    $prenomBdd = pg_fetch_array($requetePrenom);
+    // on compte le nombre de récurrence du nom de région:
+    $compte=pg_fetch_array(pg_query("SELECT COUNT(nomregion) FROM utilisateur WHERE nomregion = '".$nomregion."';"))[0];
 
-    //Récupération du nom de région
-
-    $requeteRegion = pg_query("SELECT nomregion FROM utilisateur WHERE mail = '".$verif_mail."';");
-
-    $regionBdd = pg_fetch_array($requeteRegion);
-
-    // on compte le nombre de récurrence du nom de région
-    $requeteRegion = pg_query("SELECT COUNT(nomregion) FROM utilisateur WHERE nomregion = '".$nomregion."';");
-
-    $compte=pg_fetch_array($requeteRegion)[0];
-
-    //Si le champ ancien mot de passe est rempli
-
+    //Si le champ ancien mot de passe est rempli:
     if (isset($_POST['ancienMdp']) && isset($_POST['nouveauMdp']) && isset($_POST['confirmMdp'])) {
 
     //Si les mots de passe correspondent (base de données VS ancin mdp)
-    if (password_verify($_POST['ancienMdp'], $mdpBdd[0])){
+        if (password_verify($_POST['ancienMdp'], $mdpBdd[0])){
 
-        //hacher le nouveau mot de passe
-        $pass_hache = password_hash ($_POST['nouveauMdp'], PASSWORD_DEFAULT);
-        //Modifier le mot de passe
-        $requeteupdate = pg_query("UPDATE utilisateur SET motdepasse ='".$pass_hache."' WHERE mail = '".$verif_mail."';");
-        header('Location: accueil.php');
+            //hacher le nouveau mot de passe
+            $pass_hache = password_hash ($_POST['nouveauMdp'], PASSWORD_DEFAULT);
+            //Modifier le mot de passe
+            $requeteupdate = pg_query("UPDATE utilisateur SET motdepasse ='".$pass_hache."' WHERE mail = '".$verif_mail."';");
+            header('Location: accueil.php');
+        } else 
+        {        
+            echo "Votre mot de passe ne correspond pas à celui enregistré.";
+        }
     }
-    else 
-
-    {
-
-        echo "Votre mot de passe ne correspond pas à celui enregistré";
-
-    }
-}
     //Si le nom de région n'est pas déjà pris
     if (isset($_POST['nomRegion'])){
     //Mise à jour du nom de région et du mot de passe
@@ -79,12 +52,10 @@
             //si le nom de region n'est pas deja pris
             $requeteupdate = pg_query("UPDATE utilisateur SET nomregion = '".$nomregion."' WHERE mail = '".$verif_mail."';");
             header('Location: accueil.php');
+        } else {
+            echo "ce nom de région est déjà pris par un autre utilisateur.";
         }
-        else {
-            echo "ce nom de région est déjà pris par un autre utilisateur";
-        }
-
-}
+    }
 
 ?>
 
