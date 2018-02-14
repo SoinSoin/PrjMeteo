@@ -9,7 +9,7 @@
 
 <body>
     <h1>Modifier votre profil</h1>
-    <form id="formulaire" method="post" action="php/form_modif.php">
+    <form id="formulaire" method="post" action="">
         <label>Votre nom :</label>
         <br>
         <br>
@@ -40,9 +40,10 @@
         <input type="text" name="nomderegion" placeholder=" Nouveau nom de région">
         <br>
         <br>
-        <input id="valider" class="bouton" type="submit" name="Valider" value="Valider" onclick="">
-        <input id="annuler" class="bouton" type="submit" name="Annuler" value="Annuler" onclick=""> 
+        <input id="valider" class="bouton" type="submit" name="Valider" value="Valider" onclick="redirection_modif()">
     </form>
+    <a href="annuler_modif.php" id="annuler" class="bouton" value="Annuler"> 
+<script src="js/redirection_modif.js"></script> 
 </body>
 
 </html>
