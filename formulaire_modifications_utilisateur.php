@@ -30,31 +30,35 @@
     $compte=pg_fetch_array(pg_query("SELECT COUNT(nomregion) FROM utilisateur WHERE nomregion = '".$nomregion."';"))[0];
 
     //Si le champ ancien mot de passe est rempli:
-    if (isset($_POST['ancienMdp']) && isset($_POST['nouveauMdp']) && isset($_POST['confirmMdp'])) {
+    if (isset($_POST['ancienMdp']) || isset($_POST['nouveauMdp']) || isset($_POST['confirmMdp'])) {
 
-    //Si les mots de passe correspondent (base de données VS ancin mdp)
+    //Si les mots de passe correspondent (base de données VS ancien mdp)
         if (password_verify($_POST['ancienMdp'], $mdpBdd[0])){
 
             //hacher le nouveau mot de passe
             $pass_hache = password_hash ($_POST['nouveauMdp'], PASSWORD_DEFAULT);
             //Modifier le mot de passe
-            $requeteupdate = pg_query("UPDATE utilisateur SET motdepasse ='".$pass_hache."' WHERE mail = '".$verif_mail."';");
+            $updateMdp = pg_query("UPDATE utilisateur SET motdepasse ='".$pass_hache."' WHERE mail = '".$verif_mail."';");
             header('Location: accueil.php');
         } else 
         {        
             echo "Votre mot de passe ne correspond pas à celui enregistré.";
         }
     }
-    //Si le nom de région n'est pas déjà pris
+    //Si le nom de région est renseigné
     if (isset($_POST['nomRegion'])){
-    //Mise à jour du nom de région et du mot de passe
+    //si le nom de region n'est pas deja pris
         if ($compte == 0){
-            //si le nom de region n'est pas deja pris
-            $requeteupdate = pg_query("UPDATE utilisateur SET nomregion = '".$nomregion."' WHERE mail = '".$verif_mail."';");
+            //Mise à jour du nom de région
+            $updateRegion = pg_query("UPDATE utilisateur SET nomregion = '".$nomregion."' WHERE mail = '".$verif_mail."';");
             header('Location: accueil.php');
-        } else {
+        } else 
+        {
             echo "ce nom de région est déjà pris par un autre utilisateur.";
         }
+    }
+    else {
+        echo "Veuillez saisir un nouveau mot de passe ou un nouveau nom de région SVP.";
     }
 
 ?>
