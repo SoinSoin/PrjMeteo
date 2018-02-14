@@ -4,36 +4,19 @@
 
     $verif_mail=$_COOKIE['e_mail'];
 
-    $test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
+    $connect = pg_connect("host=localhost port=5432 dbname=bdd_meteon user=admin password=admin");
 
-    $connect = pg_connect($test);
+    // on récupère l'ancien mot de passe, le nom le prenom et le nom de région dans la BDD
+    $request = pg_fetch_array(pg_query("SELECT motdepasse, nom, prenom, nomregion FROM utilisateur WHERE mail = '".$verif_mail."';"));
 
-    $nom = $_POST['nom'];
-
-    $prenom = $_POST['prenom'];
-
-    $nomregion = $_POST ['nomRegion'];
-
-    // on récupère l'ancien mot de passe dans la BDD
-    $mdpBdd = pg_fetch_array(pg_query("SELECT motdepasse FROM utilisateur WHERE mail = '".$verif_mail."';"));
-
-    // Récupération nom utilisateur:
-    $nomBdd = pg_fetch_array(pg_query("SELECT nom FROM utilisateur WHERE mail = '".$verif_mail."';"));
-
-    //Récupération prénom utilisateur:
-    $prenomBdd = pg_fetch_array(pg_query("SELECT prenom FROM utilisateur WHERE mail = '".$verif_mail."';"));
-
-    //Récupération du nom de région:
-    $regionBdd = pg_fetch_array(pg_query("SELECT nomregion FROM utilisateur WHERE mail = '".$verif_mail."';"));
-
-    // on compte le nombre de récurrence du nom de région:
+    // on compte le nombre d'ocurrence du nom de région:
     $compte=pg_fetch_array(pg_query("SELECT COUNT(nomregion) FROM utilisateur WHERE nomregion = '".$nomregion."';"))[0];
 
     //Si le champ ancien mot de passe est rempli:
-    if (isset($_POST['ancienMdp']) || isset($_POST['nouveauMdp']) || isset($_POST['confirmMdp'])) {
+    if (!empty($_POST['ancienMdp']) || !empty($_POST['nouveauMdp']) || !empty($_POST['confirmMdp'])) {
 
     //Si les mots de passe correspondent (base de données VS ancien mdp)
-        if (password_verify($_POST['ancienMdp'], $mdpBdd[0])){
+        if (password_verify($_POST['ancienMdp'], $request[0])){
 
             //hacher le nouveau mot de passe
             $pass_hache = password_hash ($_POST['nouveauMdp'], PASSWORD_DEFAULT);
@@ -46,7 +29,7 @@
         }
     }
     //Si le nom de région est renseigné
-    if (isset($_POST['nomRegion'])){
+    if (!empty($_POST['nomRegion'])){
     //si le nom de region n'est pas deja pris
         if ($compte == 0){
             //Mise à jour du nom de région
@@ -57,9 +40,8 @@
             echo "ce nom de région est déjà pris par un autre utilisateur.";
         }
     }
-    else {
-        echo "Veuillez saisir un nouveau mot de passe ou un nouveau nom de région SVP.";
-    }
+
+
 
 ?>
 
@@ -78,13 +60,13 @@
         <label>Votre nom :</label>
         <br>
         <br>
-        <input type="text" name="nom" placeholder=" Entrez votre nom" value="<?php echo "$nomBdd[0]" ?>" required>
+        <input type="text" name="nom" placeholder=" Entrez votre nom" value="<?php echo "$request[1]" ?>" required>
         <br>
         <br>
         <label>Votre prénom :</label>
         <br>
         <br>
-        <input type="text" name="prenom" placeholder=" Entrez votre prénom" value="<?php echo "$prenomBdd[0]" ?>" required>
+        <input type="text" name="prenom" placeholder=" Entrez votre prénom" value="<?php echo "$request[2]" ?>" required>
         <br>
         <br>
         <label>Ancien mot de passe :</label>
@@ -107,7 +89,7 @@
         <br>
         <label>Modifier le nom de région :</label>
         <br/>
-        <label>Votre nom de région actuel est : <?php echo "$regionBdd[0]" ?></label>
+        <label>Votre nom de région actuel est : <?php echo "$request[3]" ?></label>
         <br>
         <br>
         <input type="text" name="nomRegion" placeholder=" Entrer un nom de région">
