@@ -9,7 +9,7 @@
 <body>
 	<div id="tout">
 		<h1>Ajouter un nouvel utilisateur</h1>
-		<form class="box" action="#" method="post">
+		<form class="box" action="ajoututil.php" method="post">
 			<div class="adresse">
 				<p> Adresse Email :
 					<input id="mai_l" type="email" name="adresse" required placeholder="nomutilisateur@gmail.com">
