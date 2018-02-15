@@ -1,29 +1,14 @@
 <?php
 
-var_dump($_POST);
+$bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
-
-//connexion bdd locale
-$test = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
-
-$connect = pg_connect($test);
-
+$connect = pg_connect($bd);
 
 $mail=$_POST['mail'];
 
-$foo = pg_query("SELECT nom, prenom FROM utilisateur WHERE  mail='".$mail."';");
-$resultat = pg_fetch_array($foo);
+$requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE  mail='".$mail."';"));
 
-var_dump($foo);
-
-
-
-var_dump(mail($mail,"Mot de passe oublie","Voici ton mot de passe : $resultat[0]$resultat[1]"));
-
-pg_close($connect);
-//bouton deconnexion
-
-
+var_dump(mail($mail,"Mot de passe oublie","Voici ton mot de passe : $requeteNom[0]$requeteNom[1]"));
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +16,6 @@ pg_close($connect);
 <head>
 </head>
 <body>
-<p> <?php echo "$resultat[0]$resultat[1]";?> </p>
+<p> <?php echo "$requeteNom[0]$requeteNom[1]";?> </p>
 </body>
 </html>

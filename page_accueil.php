@@ -2,12 +2,10 @@
 
     //on utilise la fonction session_start pour démarrer une session et obtenir un numéro de session
     session_start();
-    error_reporting(E_ALL);
-    //on récupère ce qu'on a rentré dans  l'input mail@ et on hache le mot de passe
-    $mail = $_POST['mail@'];
+
+    $mail = $_POST['mail'];
     $mdp = $_POST['password'];
 
-    
     //on créé une fonction php qui nous servira à nous rediriger vers la page principale en fonction du statut
     if(isset($mail)){
     //cette condition me permet de conditionner la création du cookie et ma requête à l'envoie des données de mon formulaire via la méthode post
@@ -17,19 +15,15 @@
        
         $connect = pg_connect($bd);
        
-        $requeteverifmdp = pg_query("SELECT motdepasse FROM utilisateur WHERE mail = '".$mail."';");
+        $verifmdp = pg_fetch_array(pg_query("SELECT motdepasse FROM utilisateur WHERE mail = '".$mail."';"));
        
-        $resultatverifmdp = pg_fetch_array($requeteverifmdp);
-       
-        $hashe = $resultatverifmdp[0];
+        $hashe = $verifmdp[0];
         
         if (password_verify($mdp, $hashe)){ 
-
-            $requete = pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';");
             
-            $resultat = pg_fetch_array($requete);
+            $requeteId = pg_fetch_array(pg_query("SELECT fk_idstatut FROM utilisateur WHERE mail = '".$mail."';"));
 
-            if($resultat[0]==1) {
+            if($requeteId[0]==1) {
                 header('Location: page_formateurs.php');
             }
             else{
@@ -48,9 +42,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style_index.css">
     <title>METEON - La météo des humeurs</title>
-    <script type="text/javascript">
-        history.forward();
-    </script>
 </head>
 
 <body>
@@ -60,7 +51,7 @@
             <label>Veuillez entrer votre adresse mail :</label>
             <br>
             <br>
-            <input type="email" name="mail@" placeholder="ex: john-smith@cliché.com">
+            <input type="email" name="mail" placeholder="ex: john-smith@cliché.com">
         </p>
         <br>
         <p>

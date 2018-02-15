@@ -10,7 +10,7 @@
     $request = pg_fetch_array(pg_query("SELECT motdepasse, nom, prenom, nomregion FROM utilisateur WHERE mail = '".$verif_mail."';"));
 
     // on compte le nombre d'ocurrence du nom de région:
-    $compte=pg_fetch_array(pg_query("SELECT COUNT(nomregion) FROM utilisateur WHERE nomregion = '".$nomregion."';"))[0];
+    $compte = pg_fetch_array(pg_query("SELECT COUNT(nomregion) FROM utilisateur WHERE nomregion = '".$nomregion."';"))[0];
 
     //Si le champ ancien mot de passe est rempli:
     if (!empty($_POST['ancienMdp']) || !empty($_POST['nouveauMdp']) || !empty($_POST['confirmMdp'])) {
@@ -96,7 +96,7 @@
         <br>
         <br>
         <input id="valider" class="bouton" type="submit" name="Valider" value="Valider">
-        <a href="/php/redirection.php"><input type="button" id="annuler" class="bouton" name="Annuler" value="Annuler"></a> 
+        <a href="php/redirection.php"><input type="button" id="annuler" class="bouton" name="Annuler" value="Annuler"></a> 
     </form>
 </body>
 

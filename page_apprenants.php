@@ -2,17 +2,15 @@
 
 session_start();
 
-$iduser = $_COOKIE['e_mail'];
+$mail = $_COOKIE['e_mail'];
 
 $bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
 $connect = pg_connect($bd);
 
-$requete = pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$iduser."';");
-
-$resultat = pg_fetch_array($requete);
-
+$requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$mail."';"));
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -63,11 +61,11 @@ $resultat = pg_fetch_array($requete);
     <div id="n_p">
         <span id="php_np">
             <!-- Requete pour afficher nom et prenom -->
-            <?php echo "$resultat[1] $resultat[0]";?>
+            <?php echo "$requeteNom[1] $requeteNom[0]";?>
         </span>
         <div id="pos_bouton">
-            <a href="formulaire_modifications.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier"></a>
-            <a href="deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion"></a>
+            <a href="formulaire_modifications_utilisateur.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier"></a>
+            <a href="php/deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion"></a>
         </div>
     </div>
     <div id="menu_lat_droit">

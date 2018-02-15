@@ -14,6 +14,7 @@
                 <p>Veuillez entrer votre adresse mail :</p>
                 <input type="email" name="mail" placeholder="jeanbernard@mail.com" id="champ">
                 <br>
+                <!-- A terminer en php -->
                 <input type="submit" name="bouton" value="Envoyer" id="bouton" onclick="redirection()">
             </form>
         </div>

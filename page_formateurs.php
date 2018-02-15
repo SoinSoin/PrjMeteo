@@ -2,20 +2,13 @@
 
 session_start();
 
-$iduser = $_COOKIE['e_mail'];
+$mail = $_COOKIE['e_mail'];
 
 $bd = "host=localhost port=5432 dbname=bdd_meteon user=admin password=admin";
 
 $connect = pg_connect($bd);
 
-$requete = pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$iduser."';");
-
-//$oui= pg_query('SELECT "fk_idutilisateur", "fk_idhumeur", "fk_iddate" FROM meteodujour WHERE "fk_idutilisateur"= 7 AND "fk_iddate" BETWEEN 5 AND 16;');
-
-// $result=pg_fetch_array($oui);
-// print_r($result);
-
-$resultat = pg_fetch_array($requete);
+$requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$mail."';"));
 
 
 ?>
@@ -44,12 +37,12 @@ $resultat = pg_fetch_array($requete);
     <div id="date"></div>
     <div id="n_p">
         <span id="php_np">
-            <?php echo "$resultat[1] $resultat[0]";?>
+            <?php echo "$requeteNom[1] $requeteNom[0]";?>
         </span>
     </div>
         <div id="pos_bouton">
-            <a href="formulaire_modifications.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier"></a>
-            <a href="deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion"></a>
+            <a href="formulaire_modifications_utilisateur.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier"></a>
+            <a href="php/deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion"></a>
         </div>
     </div>
     <div id="menu_lat_droit">
