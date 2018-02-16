@@ -9,7 +9,7 @@
 <body>
 	<div id="tout">
 		<h1>Ajouter un nouvel utilisateur</h1>
-		<form class="box" action="ajoututil.php" method="post">
+		<form class="box" action="php/ajoututil.php" method="post">
 			<div class="adresse">
 				<p> Adresse Email :
 					<input id="mai_l" type="email" name="adresse" required placeholder="nomutilisateur@gmail.com">
@@ -23,8 +23,9 @@
                     </select>
                 </p>
             </label>
-            <div class="valider">
-                <input class="boutton" type="button" value="Ajouter" onclick="confirme_ajout()">
+            <div>
+                <input class="boutton" type="submit" value="Ajouter">
+                <a class="valider" href="php/redirection.php"><input class="boutton" type="button" value="Annuler"></a>
             </div>
         </form>
     </div>

@@ -57,3 +57,7 @@ form {
     color: #ff0066;
     text-align: center;
 }
+
+.valider {
+    text-decoration: none;
+}

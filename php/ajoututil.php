@@ -15,6 +15,10 @@ if ($statut == "Formateur") {
 else {
 	$statut = 2;
 	$insertUtil = pg_query("INSERT INTO utilisateur (mail, fk_idstatut) VALUES ('".$mail."', '".$statut."');");
+	$requetePosition = pg_fetch_all(pg_query("SELECT idposition FROM position;"));
+	
+	$inertPos = pg_query("INSERT INTO position (idposition) VALUES ('".$increment."')");
+
 
 }
 
