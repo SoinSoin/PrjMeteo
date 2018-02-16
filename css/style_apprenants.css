@@ -56,6 +56,7 @@ body {
 }
 
 #valider {
+    cursor : pointer;
     width: 100px;
     position: absolute;
     top: 350px;

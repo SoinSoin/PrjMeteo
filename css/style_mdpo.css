@@ -27,6 +27,7 @@ h1,p {
 }
 
 #bouton {
+	cursor : pointer;
 	border: 1px solid white;
     padding: 5px;
     color: white;
