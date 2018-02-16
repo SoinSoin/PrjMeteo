@@ -10,6 +10,8 @@ $connect = pg_connect($bd);
 
 $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$mail."';"));
 
+// $requeteTotauxHumeurs = pg_fetch_array(pg_query("SELECT count(fk_idhumeur) from meteodujour group by fk_idhumeur order by fk_idhumeur";));
+// echo ($requeteTotauxHumeurs[0]);
 
 ?>
 <!DOCTYPE html>
