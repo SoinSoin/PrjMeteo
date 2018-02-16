@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -46,23 +46,29 @@ $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE
         </div>
     </div>
     <div id="menu_lat_droit">
-        <div id="icone_1">
-            <img src="images/ico_rainbow.png">
+        <div class="ico_et_val" id="icone_1">
+            <img class="ico_barre_laterale" src="images/ico_rainbow.png">
+            <p class = "style-chiffre">chiffre</p>
         </div>
-        <div id="icone_2">
-            <img src="images/ico_soleil.png">
+        <div class="ico_et_val" id="icone_2">
+            <img class="ico_barre_laterale" src="images/ico_soleil.png">
+            <p class = "style-chiffre">chiffre</p>
         </div>
-        <div id="icone_3">
-            <img src="images/ico_brouillard.png">
+        <div class="ico_et_val" id="icone_3">
+            <img class="ico_barre_laterale" src="images/ico_brouillard.png">
+            <p class = "style-chiffre">chiffre</p>
         </div>
-        <div id="icone_4">
-            <img src="images/ico_pluie.png">
+        <div class="ico_et_val" id="icone_4">
+            <img class="ico_barre_laterale" src="images/ico_pluie.png">
+            <p class = "style-chiffre">chiffre</p>
         </div>
-        <div id="icone_5">
-            <img src="images/ico_vent.png">
+        <div class="ico_et_val" id="icone_5">
+            <img class="ico_barre_laterale" src="images/ico_vent.png">
+            <p class = "style-chiffre">chiffre</p>
         </div>
-        <div id="icone_6">
-            <img src="images/ico_orage.png">
+        <div class="ico_et_val" id="icone_6">
+            <img class="ico_barre_laterale" src="images/ico_orage.png">
+            <p class = "style-chiffre">chiffre</p>
         </div>
     </div>
     <div id="carte">
@@ -176,13 +182,13 @@ $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE
     <?php
     $chainevaleur="";
     $oui=pg_query('SELECT "fk_idutilisateur", "fk_idhumeur", "fk_iddate" FROM meteodujour WHERE "fk_idutilisateur"= 7 AND "fk_iddate" BETWEEN 5 AND 16;');
-    while($result=pg_fetch_array($oui) ){ 
+    while($result=pg_fetch_array($oui) ){
         $chainevaleur.=  $result[1];
     }
-    ?> 
+    ?>
        <input id="donnees" type="hidden" value='<?php echo $chainevaleur; ?>'>
 
-   
+
     </div>
     <script type="text/javascript" src="js/style.js"></script>
     <script type="text/javascript" src="js/stats.js"></script>

@@ -76,6 +76,10 @@
 #pos_bouton {
     text-align: center;
     margin-top: 10px;
+    right:0;
+    position: absolute;
+    top:20px;
+    right:25px;
 }
 
 a.redirection {
