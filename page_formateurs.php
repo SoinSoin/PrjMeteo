@@ -10,6 +10,26 @@ $connect = pg_connect($bd);
 
 $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$mail."';"));
 
+// Afficher la date du jour et des jours précédents
+
+$dateJour =  date("Y-m-d");
+$dateJmoins1 =  strftime("%y-%m-%d", mktime(0, 0, 0, date('m'), date('d')-1, date('y'))); 
+$dateJmoins2 =  strftime("%y-%m-%d", mktime(0, 0, 0, date('m'), date('d')-2, date('y'))); 
+$dateJmoins3 =  strftime("%y-%m-%d", mktime(0, 0, 0, date('m'), date('d')-3, date('y'))); 
+
+//Afficher le nombre d'icones sur les trois derniers jours
+
+//Requete SQL : les types d'icones sont rangés par ordre croissant, pour afficher leur décompte il faut sélectionner la ligne qui leur correspond dans le tableau
+
+$humeurMoins1 = pg_fetch_all_columns(pg_query("SELECT COUNT(fk_idhumeur) FROM meteodujour INNER JOIN date ON meteodujour.fk_iddate = date.iddate WHERE date.datejour = '".$dateJmoins1."' GROUP BY (fk_idhumeur) ORDER BY (fk_idhumeur);"));
+
+$humeurMoins2 = pg_fetch_all_columns(pg_query("SELECT COUNT(fk_idhumeur) FROM meteodujour INNER JOIN date ON meteodujour.fk_iddate = date.iddate WHERE date.datejour = '".$dateJmoins2."' GROUP BY (fk_idhumeur) ORDER BY (fk_idhumeur);"));
+
+$humeurMoins3 = pg_fetch_all_columns(pg_query("SELECT COUNT(fk_idhumeur) FROM meteodujour INNER JOIN date ON meteodujour.fk_iddate = date.iddate WHERE date.datejour = '".$dateJmoins3."' GROUP BY (fk_idhumeur) ORDER BY (fk_idhumeur);"));
+
+//Afficher le nombre total d'icones depuis le début de la formation
+
+$humeurAnnee = pg_fetch_all_columns(pg_query("SELECT COUNT(fk_idhumeur) FROM meteodujour INNER JOIN date ON meteodujour.fk_iddate = date.iddate WHERE date.datejour <= '".$dateJour."' GROUP BY (fk_idhumeur) ORDER BY (fk_idhumeur);"));
 
 ?>
 <!DOCTYPE html>
@@ -28,13 +48,11 @@ $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE
 
 <body>
 
-    <!-- Début menu du haut -->
-
     <div id="logo">
         <img src="images/logo_METEON.png" title="logo" class="logo"></img>
     </div>
     <div id="diventre"></div>
-    <div id="date"></div>
+    <div id="date">  </div>
     <div id="n_p">
         <span id="php_np">
             <?php echo "$requeteNom[1] $requeteNom[0]";?>
@@ -49,21 +67,32 @@ $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE
         <div id="icone_1">
             <img src="images/ico_rainbow.png">
         </div>
+        <div> <p> <?php echo "$humeurAnnee[0]"; ?> </p> </div>
         <div id="icone_2">
             <img src="images/ico_soleil.png">
         </div>
+        <div> <p> <?php echo "$humeurAnnee[1]"; ?> </p> </div>
+
         <div id="icone_3">
             <img src="images/ico_brouillard.png">
         </div>
+        <div> <p> <?php echo "$humeurAnnee[2]"; ?> </p> </div>
+
         <div id="icone_4">
             <img src="images/ico_pluie.png">
         </div>
+        <div> <p> <?php echo "$humeurAnnee[3]"; ?> </p> </div>
+
         <div id="icone_5">
             <img src="images/ico_vent.png">
         </div>
+        <div> <p> <?php echo "$humeurAnnee[4]"; ?> </p> </div>
+
         <div id="icone_6">
             <img src="images/ico_orage.png">
         </div>
+        <div> <p> <?php echo "$humeurAnnee[5]"; ?> </p> </div>
+
     </div>
     <div id="carte">
         <img id="img_carte" src="images/map.jpg">
@@ -131,9 +160,89 @@ $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE
         </div>
     </div>
     <div id="review">
-        <div class="jour">J-3</div>
-        <div class="jour">J-2</div>
-        <div class="jour">J-1</div>
+        <div class="jour">
+            <p><?php echo "$dateJmoins3"; ?></p>       
+            <div class="conteneurColonne">
+                <div><img src="images/ico_rainbow.png"></div>
+                <div> <p> <?php echo "$humeurMoins3[0]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_soleil.png"></div>
+                <div> <p> <?php echo "$humeurMoins3[1]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_brouillard.png"></div>
+                <div> <p> <?php echo "$humeurMoins3[2]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_pluie.png"></div>
+                <div> <p> <?php echo "$humeurMoins3[3]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_vent.png"></div>
+                <div> <p> <?php echo "$humeurMoins3[4]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_orage.png"></div>
+                <div> <p> <?php echo "$humeurMoins3[5]"; ?> </p> </div>
+            </div>
+        </div>
+
+        <div class="jour">
+            <p> <?php echo "$dateJmoins2"; ?> </p>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_rainbow.png"></div>
+                <div> <p> <?php echo "$humeurMoins2[0]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_soleil.png"></div>
+                <div> <p> <?php echo "$humeurMoins2[1]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_brouillard.png"></div>
+                <div> <p> <?php echo "$humeurMoins2[2]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_pluie.png"></div>
+                <div> <p> <?php echo "$humeurMoins2[3]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_vent.png"></div>
+                <div> <p> <?php echo "$humeurMoins2[4]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_orage.png"></div>
+                <div> <p> <?php echo "$humeurMoins2[5]"; ?> </p> </div>
+            </div>
+        </div> 
+
+        <div class="jour">
+            <p><?php echo "$dateJmoins1"; ?></p>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_rainbow.png"></div>
+                <div> <p> <?php echo "$humeurMoins1[0]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_soleil.png"></div>
+                <div> <p> <?php echo "$humeurMoins1[1]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_brouillard.png"></div>
+                <div> <p> <?php echo "$humeurMoins1[2]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_pluie.png"></div>
+                <div> <p> <?php echo "$humeurMoins1[3]";?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_vent.png"></div>
+                <div> <p> <?php echo "$humeurMoins1[4]"; ?> </p> </div>
+            </div>
+            <div class="conteneurColonne">
+                <div><img src="images/ico_orage.png"></div>
+                <div> <p> <?php echo "$humeurMoins1[5]"; ?> </p> </div>
+            </div>
+        </div>          
     </div>
     <div id="menu_lat_droit_stat">
         <form>

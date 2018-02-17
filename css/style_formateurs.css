@@ -15,18 +15,36 @@ body {
 #review {
     width: 100%;
     height: 125px;
-    position: absolute;
     top: 651px;
+    position: absolute;
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
     grid-template-rows: 100%;
+    display: flex;
+    flex-direction: row;    
 }
 
-.jour {
-    text-align: right;
-    padding-top: 105px;
-    border: 1px solid #ff0066;
+#review img {
+    width: 50%;
+    margin : 1%;
+
 }
+
+.conteneurColonne{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40%;
+
+}
+
+
+.jour {
+    border: 1px solid #ff0066;
+    display: flex;
+    flex-direction: row;
+    text-align: center;  
+}
+
 
 #menu_lat_droit_stat {
     z-index: -1;
@@ -47,3 +65,4 @@ body {
     height: 99%;
     border-top: 2px solid #ff0066;
 }
+
