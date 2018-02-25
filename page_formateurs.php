@@ -10,8 +10,9 @@ $connect = pg_connect($bd);
 
 $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE mail = '".$mail."';"));
 
-// $requeteTotauxHumeurs = pg_fetch_array(pg_query("SELECT count(fk_idhumeur) from meteodujour group by fk_idhumeur order by fk_idhumeur";));
-// echo ($requeteTotauxHumeurs[0]);
+// $requeteTotauxHumeurs = pg_fetch_array(pg_query("SELECT COUNT (fk_idhumeur) from meteodujour group by fk_idhumeur order by fk_idhumeur";));
+// echo $requeteTotauxHumeurs[0];
+
 
 ?>
 <!DOCTYPE html>
@@ -43,8 +44,9 @@ $requeteNom = pg_fetch_array(pg_query("SELECT nom, prenom FROM utilisateur WHERE
         </span>
     </div>
         <div id="pos_bouton">
-            <a href="formulaire_modifications_utilisateur.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier"></a>
-            <a href="php/deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion"></a>
+            <a href="formulaire_modifications_utilisateur.php" class="redirection"><input type="button" name="boutonmodif" id="bouton_modifier" value="Modifier" title="Modifier votre profil"></a>
+            <a href="formulaire_ajout_utilisateurs.php" class="redirection"><input type="button" name="ajoutUtilisateur" id="bouton_ajout" value="+" title="Ajouter un utilisateur"></a>
+            <a href="php/deco.php" class="redirection"><input type="button" name="boutondeco" id="bouton_deconnexion" value="Déconnexion" title="Se déconnecter de votre profil"></a>
         </div>
     </div>
     <div id="menu_lat_droit">

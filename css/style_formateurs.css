@@ -13,8 +13,8 @@ body {
 .style-chiffre{
   float:right;
   margin-right: -41%;
-display: flex;
-justify-content: right;
+  display: flex;
+  justify-content: right;
 }
 
 #review {
